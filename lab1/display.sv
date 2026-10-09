@@ -11,7 +11,7 @@ module display (input logic [2:0] count,
 		
 		case (count)
 			3'b000: begin
-				HEX5 = 7'b0110001; // C
+				HEX5 = 7'b1000110; // C
 				HEX4 = 7'b1110001; // L
 				HEX3 = 7'b0110000; // E
 				HEX2 = 7'b0001000; // A

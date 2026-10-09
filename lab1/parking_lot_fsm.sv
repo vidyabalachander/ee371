@@ -29,9 +29,9 @@ module parking_lot_fsm (input logic clk, reset, outer, inner,
 					else if (outer & inner)		ns = S5; // move to S5 if both
 					else 								ns = S0; // invalid		
 			S5: 	if (outer & inner) 			ns = S5;	// stay in S5
-					else if (outer & ~inner)	ns = S5; // move to S6 if only outer 
+					else if (outer & ~inner)	ns = S6; // move to S6 if only outer 
 					else 								ns = S0; // invalid
-			S6: 	if (outer & inner) 			ns = S6;	// stay in S6
+			S6: 	if (outer & ~inner) 			ns = S6;	// stay in S6
 					else if (~outer & ~inner)	ns = S0; // move to S0 if neither (car has exited lot)
 					else 								ns = S0; // invalid
 			default: ns = S0;
