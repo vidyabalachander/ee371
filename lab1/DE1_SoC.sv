@@ -14,5 +14,25 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDR, V_GPIO);
 	assign HEX3 = 7'b1111111;
 	assign HEX4 = 7'b1111111;
 	assign HEX5 = 7'b1111111;
+	
+	// clock setup
+	logic [31:0] clk;
+	logic SYSTEM_CLOCK;
+
+	clock_divider divider (.clock(CLOCK_50), .divided_clocks(clk));
+
+	assign SYSTEM_CLOCK = clk[14]; // 1526 Hz clock signal	
+	
+	logic reset, outer, inner;
+	
+	logic outer, inner, enter, exit;
+	
+	parking_lot_fsm		fsm 	(.clk(SYSTEM_CLOCK), .reset, .outer, .inner,
+										.enter, .exit);
+										
+	
+
+	
+	
 
 endmodule  // DE1_SoC
