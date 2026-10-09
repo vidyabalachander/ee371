@@ -1,0 +1,11 @@
+module parking_lot_occupancy (input logic clk, reset, incr, decr,
+				output logic [2:0] count);
+	
+	
+	always_comb begin
+		if (reset) count = 0;
+		if (count < 5 & incr) count++;
+		if (count > 0 & decr) count--;
+	end
+	
+	

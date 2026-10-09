@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at car_counter.sv(5): always construct contains both blocking and non-blocking assignments File: C:/Users/balac/Projects/EE371/labs/ee371/lab1/car_counter.sv Line: 5
