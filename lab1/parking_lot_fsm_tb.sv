@@ -73,7 +73,7 @@ module parking_lot_fsm_tb();
 						// move to S3
 						outer <= 0;	inner <= 1; @(posedge clk);
 						// invalid, return to S0
-						outer <= 1; inner <= 1;
+						outer <= 1; inner <= 1; @(posedge clk);
 						
 						// move to S4
 						outer <= 0;	inner <= 1; @(posedge clk);
