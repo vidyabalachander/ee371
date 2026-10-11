@@ -1,17 +1,25 @@
+/*
+	The parking_lot_fsm module decides the next state based on the present state and 
+	the input signals (outer, inner, reset). It also outputs enter and exit signals, 
+	which are each one clock pulse long to indicate when a car has entered or exited
+	the parking lot. The system is synchronized to the clock (clk).
+*/
+
 module parking_lot_fsm (input logic clk, reset, outer, inner,
 				  output logic enter, exit);
 				  
+	// instantiates states
 	enum logic [2:0] {S0, S1, S2, S3, S4, S5, S6} ps, ns;
 	
-	
+	// always_ff controls reset logic or maintains the state across clock cycles
 	always_ff @(posedge clk)
 		if (reset)
 			ps <= S0;
 		else 
 			ps <= ns;
-				
+	
+	// always_comb decides next state based on present state and outer/inner inputs
 	always_comb begin
-		
 		case (ps)
 			S0: 	if (outer & ~inner) 			ns = S1; // move to S1 if entering (only outer)
 					else if (~outer & inner)	ns = S4;	//	move to S4 if exiting (only inner)
@@ -35,12 +43,11 @@ module parking_lot_fsm (input logic clk, reset, outer, inner,
 					else if (~outer & ~inner)	ns = S0; // move to S0 if neither (car has exited lot)
 					else 								ns = S0; // invalid
 			default: ns = S0;
-		endcase
-		
-		
-	end
+		endcase // state case
+	end // always_comb
 	
+	// assign outputs
 	assign enter = ~outer & ~inner & (ps == S3);
 	assign exit = ~outer & ~inner & (ps == S6);
 	
-endmodule
+endmodule // parking_lot_fsm

@@ -1,7 +1,15 @@
+/*
+	This display module describes the combinational logic controlling
+	the on-board seven segment display, showing how many cars are in the
+	parking lot. It takes in a three bit variable count representing the 
+	car count and outputs six active low 7 bit HEX codes.
+*/
 module display (input logic [2:0] count,
 					output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
-					
+	
+	// Describes the combinational logic for the seven segment display
 	always_comb begin
+		// default all off
 		HEX5 = 7'b1111111;
 		HEX4 = 7'b1111111;
 		HEX3 = 7'b1111111;
@@ -9,6 +17,8 @@ module display (input logic [2:0] count,
 		HEX1 = 7'b1111111;
 		HEX0 = 7'b1111111;
 		
+		// The case statement determine what is displayed on the seven segment
+		// display based on the count of cars in the parking lot.
 		case (count)
 			3'b000: begin
 				HEX5 = 7'b1000110; // C
@@ -44,7 +54,7 @@ module display (input logic [2:0] count,
 			end
 			default: begin
 			end
-		endcase
-	end
+		endcase // case statement
+	end // always_comb
 	
-endmodule
+endmodule // display
