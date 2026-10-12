@@ -1,0 +1,27 @@
+/* Testbench for the car_counter module */
+module car_counter_tb()
+	
+	logic clk, reset, incr, decr;
+	logic [2:0] count;
+	
+	car_counter dut(.*);
+	
+	parameter period = 100;
+	initial begin
+		clk <= 0;
+		forever
+			#(period/2)
+			clk <= ~clk;
+	end
+	
+	initial begin
+		// resetting to S0
+		reset <= 1;	decr <= 0; incr <= 0;  	@(posedge clk);
+		reset <= 0;						  			@(posedge clk);
+		
+		
+		incr <=
+		
+	end
+
+endmodule 

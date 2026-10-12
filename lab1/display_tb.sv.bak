@@ -1,0 +1,19 @@
+/* Testbench for the display module */
+module display_tb()
+
+	logic [2:0] count;
+	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+	
+	display dut(.*)
+	
+	// This testbench tests the 7-segment display outputs for all values of count
+	initial begin
+		for (int i = 0; i < 8; i++) begin
+			count = i[2:0];
+			#10;
+		end
+		
+		$stop;
+	end
+	
+endmodule // display_tb
