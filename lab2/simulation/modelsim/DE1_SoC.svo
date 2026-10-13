@@ -1,0 +1,337 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Intel and sold by Intel or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
+
+// DATE "10/13/2026 13:38:51"
+
+// 
+// Device: Altera 5CSEMA5F31C6 Package FBGA896
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (SystemVerilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module task1 (
+	Address,
+	CLK,
+	DataIn,
+	Write,
+	DataOut);
+input 	logic [4:0] Address ;
+input 	logic CLK ;
+input 	logic [2:0] DataIn ;
+input 	logic Write ;
+output 	logic [2:0] DataOut ;
+
+// Design Ports Information
+// DataOut[0]	=>  Location: PIN_J10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DataOut[1]	=>  Location: PIN_J9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DataOut[2]	=>  Location: PIN_F9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Write	=>  Location: PIN_K7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CLK	=>  Location: PIN_Y27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DataIn[0]	=>  Location: PIN_E6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Address[0]	=>  Location: PIN_E7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Address[1]	=>  Location: PIN_F10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Address[2]	=>  Location: PIN_E1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Address[3]	=>  Location: PIN_E2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Address[4]	=>  Location: PIN_D1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DataIn[1]	=>  Location: PIN_G10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DataIn[2]	=>  Location: PIN_E3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+wire \Write~input_o ;
+wire \CLK~input_o ;
+wire \CLK~inputCLKENA0_outclk ;
+wire \DataIn[0]~input_o ;
+wire \Address[0]~input_o ;
+wire \Address[1]~input_o ;
+wire \Address[2]~input_o ;
+wire \Address[3]~input_o ;
+wire \Address[4]~input_o ;
+wire \DataIn[1]~input_o ;
+wire \DataIn[2]~input_o ;
+wire [2:0] \ram|altsyncram_component|auto_generated|q_a ;
+
+wire [19:0] \ram|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
+
+assign \ram|altsyncram_component|auto_generated|q_a [0] = \ram|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0];
+assign \ram|altsyncram_component|auto_generated|q_a [1] = \ram|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [1];
+assign \ram|altsyncram_component|auto_generated|q_a [2] = \ram|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [2];
+
+// Location: IOOBUF_X4_Y81_N2
+cyclonev_io_obuf \DataOut[0]~output (
+	.i(\ram|altsyncram_component|auto_generated|q_a [0]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(DataOut[0]),
+	.obar());
+// synopsys translate_off
+defparam \DataOut[0]~output .bus_hold = "false";
+defparam \DataOut[0]~output .open_drain_output = "false";
+defparam \DataOut[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X4_Y81_N19
+cyclonev_io_obuf \DataOut[1]~output (
+	.i(\ram|altsyncram_component|auto_generated|q_a [1]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(DataOut[1]),
+	.obar());
+// synopsys translate_off
+defparam \DataOut[1]~output .bus_hold = "false";
+defparam \DataOut[1]~output .open_drain_output = "false";
+defparam \DataOut[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X2_Y81_N42
+cyclonev_io_obuf \DataOut[2]~output (
+	.i(\ram|altsyncram_component|auto_generated|q_a [2]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(DataOut[2]),
+	.obar());
+// synopsys translate_off
+defparam \DataOut[2]~output .bus_hold = "false";
+defparam \DataOut[2]~output .open_drain_output = "false";
+defparam \DataOut[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X8_Y81_N1
+cyclonev_io_ibuf \Write~input (
+	.i(Write),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Write~input_o ));
+// synopsys translate_off
+defparam \Write~input .bus_hold = "false";
+defparam \Write~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X89_Y25_N21
+cyclonev_io_ibuf \CLK~input (
+	.i(CLK),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\CLK~input_o ));
+// synopsys translate_off
+defparam \CLK~input .bus_hold = "false";
+defparam \CLK~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G10
+cyclonev_clkena \CLK~inputCLKENA0 (
+	.inclk(\CLK~input_o ),
+	.ena(vcc),
+	.outclk(\CLK~inputCLKENA0_outclk ),
+	.enaout());
+// synopsys translate_off
+defparam \CLK~inputCLKENA0 .clock_type = "global clock";
+defparam \CLK~inputCLKENA0 .disable_mode = "low";
+defparam \CLK~inputCLKENA0 .ena_register_mode = "always enabled";
+defparam \CLK~inputCLKENA0 .ena_register_power_up = "high";
+defparam \CLK~inputCLKENA0 .test_syn = "high";
+// synopsys translate_on
+
+// Location: IOIBUF_X4_Y81_N52
+cyclonev_io_ibuf \DataIn[0]~input (
+	.i(DataIn[0]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\DataIn[0]~input_o ));
+// synopsys translate_off
+defparam \DataIn[0]~input .bus_hold = "false";
+defparam \DataIn[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X4_Y81_N35
+cyclonev_io_ibuf \Address[0]~input (
+	.i(Address[0]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Address[0]~input_o ));
+// synopsys translate_off
+defparam \Address[0]~input .bus_hold = "false";
+defparam \Address[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X6_Y81_N18
+cyclonev_io_ibuf \Address[1]~input (
+	.i(Address[1]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Address[1]~input_o ));
+// synopsys translate_off
+defparam \Address[1]~input .bus_hold = "false";
+defparam \Address[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X6_Y81_N35
+cyclonev_io_ibuf \Address[2]~input (
+	.i(Address[2]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Address[2]~input_o ));
+// synopsys translate_off
+defparam \Address[2]~input .bus_hold = "false";
+defparam \Address[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X8_Y81_N52
+cyclonev_io_ibuf \Address[3]~input (
+	.i(Address[3]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Address[3]~input_o ));
+// synopsys translate_off
+defparam \Address[3]~input .bus_hold = "false";
+defparam \Address[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X6_Y81_N52
+cyclonev_io_ibuf \Address[4]~input (
+	.i(Address[4]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Address[4]~input_o ));
+// synopsys translate_off
+defparam \Address[4]~input .bus_hold = "false";
+defparam \Address[4]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X6_Y81_N1
+cyclonev_io_ibuf \DataIn[1]~input (
+	.i(DataIn[1]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\DataIn[1]~input_o ));
+// synopsys translate_off
+defparam \DataIn[1]~input .bus_hold = "false";
+defparam \DataIn[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X8_Y81_N35
+cyclonev_io_ibuf \DataIn[2]~input (
+	.i(DataIn[2]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\DataIn[2]~input_o ));
+// synopsys translate_off
+defparam \DataIn[2]~input .bus_hold = "false";
+defparam \DataIn[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: M10K_X5_Y79_N0
+cyclonev_ram_block \ram|altsyncram_component|auto_generated|ram_block1a0 (
+	.portawe(\Write~input_o ),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\CLK~inputCLKENA0_outclk ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,\DataIn[2]~input_o ,\DataIn[1]~input_o ,\DataIn[0]~input_o }),
+	.portaaddr({\Address[4]~input_o ,\Address[3]~input_o ,\Address[2]~input_o ,\Address[1]~input_o ,\Address[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(20'b00000000000000000000),
+	.portbaddr(5'b00000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\ram|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_offset_in_bits = 1;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_width_in_bits = 1;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .logical_ram_name = "ram32x3:ram|altsyncram:altsyncram_component|altsyncram_s6o1:auto_generated|ALTSYNCRAM";
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .operation_mode = "single_port";
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_address_clear = "none";
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_address_width = 5;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_byte_enable_clock = "none";
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_data_out_clear = "none";
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_data_out_clock = "none";
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_data_width = 20;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_first_address = 0;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_first_bit_number = 0;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_last_address = 31;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_logical_ram_depth = 32;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_logical_ram_width = 3;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_b_address_width = 5;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .port_b_data_width = 20;
+defparam \ram|altsyncram_component|auto_generated|ram_block1a0 .ram_block_type = "M20K";
+// synopsys translate_on
+
+// Location: LABCELL_X18_Y25_N0
+cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .extended_lut = "off";
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 64'h0000000000000000;
+defparam \~QUARTUS_CREATED_GND~I .shared_arith = "off";
+// synopsys translate_on
+
+endmodule

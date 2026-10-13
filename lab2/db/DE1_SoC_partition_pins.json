@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "DataOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DataOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DataOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Write",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

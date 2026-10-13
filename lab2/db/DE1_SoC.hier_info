@@ -1,0 +1,98 @@
+|task1
+Address[0] => Address[0].IN1
+Address[1] => Address[1].IN1
+Address[2] => Address[2].IN1
+Address[3] => Address[3].IN1
+Address[4] => Address[4].IN1
+CLK => CLK.IN1
+DataIn[0] => DataIn[0].IN1
+DataIn[1] => DataIn[1].IN1
+DataIn[2] => DataIn[2].IN1
+Write => Write.IN1
+DataOut[0] <= ram32x3:ram.q
+DataOut[1] <= ram32x3:ram.q
+DataOut[2] <= ram32x3:ram.q
+
+
+|task1|ram32x3:ram
+address[0] => address[0].IN1
+address[1] => address[1].IN1
+address[2] => address[2].IN1
+address[3] => address[3].IN1
+address[4] => address[4].IN1
+clock => clock.IN1
+data[0] => data[0].IN1
+data[1] => data[1].IN1
+data[2] => data[2].IN1
+wren => wren.IN1
+q[0] <= altsyncram:altsyncram_component.q_a
+q[1] <= altsyncram:altsyncram_component.q_a
+q[2] <= altsyncram:altsyncram_component.q_a
+
+
+|task1|ram32x3:ram|altsyncram:altsyncram_component
+wren_a => altsyncram_s6o1:auto_generated.wren_a
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => altsyncram_s6o1:auto_generated.data_a[0]
+data_a[1] => altsyncram_s6o1:auto_generated.data_a[1]
+data_a[2] => altsyncram_s6o1:auto_generated.data_a[2]
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_s6o1:auto_generated.address_a[0]
+address_a[1] => altsyncram_s6o1:auto_generated.address_a[1]
+address_a[2] => altsyncram_s6o1:auto_generated.address_a[2]
+address_a[3] => altsyncram_s6o1:auto_generated.address_a[3]
+address_a[4] => altsyncram_s6o1:auto_generated.address_a[4]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_s6o1:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_s6o1:auto_generated.q_a[0]
+q_a[1] <= altsyncram_s6o1:auto_generated.q_a[1]
+q_a[2] <= altsyncram_s6o1:auto_generated.q_a[2]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|task1|ram32x3:ram|altsyncram:altsyncram_component|altsyncram_s6o1:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+data_a[0] => ram_block1a0.PORTADATAIN
+data_a[1] => ram_block1a1.PORTADATAIN
+data_a[2] => ram_block1a2.PORTADATAIN
+q_a[0] <= ram_block1a0.PORTADATAOUT
+q_a[1] <= ram_block1a1.PORTADATAOUT
+q_a[2] <= ram_block1a2.PORTADATAOUT
+wren_a => ram_block1a0.PORTAWE
+wren_a => ram_block1a1.PORTAWE
+wren_a => ram_block1a2.PORTAWE
+
+
