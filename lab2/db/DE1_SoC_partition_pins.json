@@ -20,7 +20,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLK",
+					"name" : "clk",
 					"strict" : false
 				},
 				{

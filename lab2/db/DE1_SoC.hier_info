@@ -4,14 +4,14 @@ Address[1] => Address[1].IN1
 Address[2] => Address[2].IN1
 Address[3] => Address[3].IN1
 Address[4] => Address[4].IN1
-CLK => CLK.IN1
+clk => clk.IN1
 DataIn[0] => DataIn[0].IN1
 DataIn[1] => DataIn[1].IN1
 DataIn[2] => DataIn[2].IN1
 Write => Write.IN1
-DataOut[0] <= ram32x3:ram.q
-DataOut[1] <= ram32x3:ram.q
-DataOut[2] <= ram32x3:ram.q
+DataOut[0] << ram32x3:ram.q
+DataOut[1] << ram32x3:ram.q
+DataOut[2] << ram32x3:ram.q
 
 
 |task1|ram32x3:ram

@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
-// DATE "10/13/2026 13:38:51"
+// DATE "10/13/2026 16:53:47"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -31,22 +31,22 @@
 
 module task1 (
 	Address,
-	CLK,
+	clk,
 	DataIn,
 	Write,
 	DataOut);
-input 	logic [4:0] Address ;
-input 	logic CLK ;
-input 	logic [2:0] DataIn ;
-input 	logic Write ;
-output 	logic [2:0] DataOut ;
+input 	[4:0] Address;
+input 	clk;
+input 	[2:0] DataIn;
+input 	Write;
+output 	[2:0] DataOut;
 
 // Design Ports Information
 // DataOut[0]	=>  Location: PIN_J10,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // DataOut[1]	=>  Location: PIN_J9,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // DataOut[2]	=>  Location: PIN_F9,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // Write	=>  Location: PIN_K7,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// CLK	=>  Location: PIN_Y27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_Y27,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // DataIn[0]	=>  Location: PIN_E6,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // Address[0]	=>  Location: PIN_E7,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // Address[1]	=>  Location: PIN_F10,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -70,8 +70,8 @@ tri1 devpor;
 tri1 devoe;
 wire \~QUARTUS_CREATED_GND~I_combout ;
 wire \Write~input_o ;
-wire \CLK~input_o ;
-wire \CLK~inputCLKENA0_outclk ;
+wire \clk~input_o ;
+wire \clk~inputCLKENA0_outclk ;
 wire \DataIn[0]~input_o ;
 wire \Address[0]~input_o ;
 wire \Address[1]~input_o ;
@@ -148,28 +148,28 @@ defparam \Write~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: IOIBUF_X89_Y25_N21
-cyclonev_io_ibuf \CLK~input (
-	.i(CLK),
+cyclonev_io_ibuf \clk~input (
+	.i(clk),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\CLK~input_o ));
+	.o(\clk~input_o ));
 // synopsys translate_off
-defparam \CLK~input .bus_hold = "false";
-defparam \CLK~input .simulate_z_as = "z";
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: CLKCTRL_G10
-cyclonev_clkena \CLK~inputCLKENA0 (
-	.inclk(\CLK~input_o ),
+cyclonev_clkena \clk~inputCLKENA0 (
+	.inclk(\clk~input_o ),
 	.ena(vcc),
-	.outclk(\CLK~inputCLKENA0_outclk ),
+	.outclk(\clk~inputCLKENA0_outclk ),
 	.enaout());
 // synopsys translate_off
-defparam \CLK~inputCLKENA0 .clock_type = "global clock";
-defparam \CLK~inputCLKENA0 .disable_mode = "low";
-defparam \CLK~inputCLKENA0 .ena_register_mode = "always enabled";
-defparam \CLK~inputCLKENA0 .ena_register_power_up = "high";
-defparam \CLK~inputCLKENA0 .test_syn = "high";
+defparam \clk~inputCLKENA0 .clock_type = "global clock";
+defparam \clk~inputCLKENA0 .disable_mode = "low";
+defparam \clk~inputCLKENA0 .ena_register_mode = "always enabled";
+defparam \clk~inputCLKENA0 .ena_register_power_up = "high";
+defparam \clk~inputCLKENA0 .test_syn = "high";
 // synopsys translate_on
 
 // Location: IOIBUF_X4_Y81_N52
@@ -268,7 +268,7 @@ cyclonev_ram_block \ram|altsyncram_component|auto_generated|ram_block1a0 (
 	.portbwe(gnd),
 	.portbre(vcc),
 	.portbaddrstall(gnd),
-	.clk0(\CLK~inputCLKENA0_outclk ),
+	.clk0(\clk~inputCLKENA0_outclk ),
 	.clk1(gnd),
 	.ena0(vcc),
 	.ena1(vcc),
