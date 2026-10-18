@@ -1,0 +1,10 @@
+module task2();
+	
+	input logic 
+	
+	
+	
+	logic [2:0] memory_array [31:0];
+	
+	
+endmodule 

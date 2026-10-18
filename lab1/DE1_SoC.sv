@@ -14,7 +14,8 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDR, V_GPIO);
 	logic SYSTEM_CLOCK;
 	clock_divider divider (.clock(CLOCK_50), .divided_clocks(clk));
 	// Change this back before the demo!
-	assign SYSTEM_CLOCK = CLOCK_50; // 1526 Hz clock signal	
+	//assign SYSTEM_CLOCK = clk[14]; // 1526 Hz clock signal	
+	assign SYSTEM_CLOCK = CLOCK_50; 
 	
 	// pin setup for I/O
 	logic reset, outer, inner;
