@@ -16,10 +16,10 @@ vlib work
 vlog "./ram32x3.v"
 vlog "./task1.sv"
 vlog "./task1_tb.sv"
-# vlog "./task2.sv"
-
-# vlog "./DE1_SoC.sv"
-
+vlog "./task2.sv"
+vlog "./task2_tb.sv"
+vlog "./DE1_SoC.sv"
+vlog "./DE1_SoC_tb.sv"
 
 # Call vsim to invoke simulator
 #  - Make sure the last item on the line is the correct name of

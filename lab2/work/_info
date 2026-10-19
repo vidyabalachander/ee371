@@ -7,15 +7,15 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/balac/Projects/EE371/labs/ee371/lab2
+dC:/Users/balac/Projects/EE371/labs/ee371/lab2
 vram32x3
-Z1 !s110 1791937646
+Z0 !s110 1792370489
 !i10b 1
 !s100 >i_=LX@Q5h;U6@m4D`gHo2
 IF9LFi]JIjV5GI?6l5GF;h1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-w1791922915
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/abirl/ee_371/ee371/lab2
+w1791925055
 8./ram32x3.v
 F./ram32x3.v
 L0 40
@@ -23,22 +23,22 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1791937646.000000
+Z4 !s108 1792370489.000000
 !s107 ./ram32x3.v|
 !s90 -reportprogress|300|./ram32x3.v|
 !i113 1
 Z5 tCvgOpt 0
 vtask1
 Z6 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-R1
+R0
 !i10b 1
 !s100 Odhfd:LN3MPo_c0DloI_K2
 I;PJC6YWmiajLQmj3L6h]P3
-R2
+R1
 !s105 task1_sv_unit
 S1
-R0
-w1791935529
+R2
+Z7 w1792260367
 8./task1.sv
 F./task1.sv
 L0 11
@@ -53,15 +53,15 @@ R4
 R5
 vtask1_tb
 R6
-!s110 1791937647
+R0
 !i10b 1
 !s100 nc]@gk;mZiYlfz;CUHh3?1
 I2_kQV_MOmlVd2C?oj4mRc3
-R2
+R1
 !s105 task1_tb_sv_unit
 S1
-R0
-w1791936963
+R2
+R7
 8./task1_tb.sv
 F./task1_tb.sv
 L0 6
@@ -69,8 +69,54 @@ R3
 r1
 !s85 0
 31
-!s108 1791937647.000000
+R4
 !s107 ./task1_tb.sv|
 !s90 -reportprogress|300|./task1_tb.sv|
+!i113 1
+R5
+vtask2
+R6
+R0
+!i10b 1
+!s100 @BacCnM0z?gGecdEkjM<53
+I@1TlVXe?9=84DzC>ToPiW2
+R1
+!s105 task2_sv_unit
+S1
+R2
+w1792368440
+8./task2.sv
+F./task2.sv
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+!s107 ./task2.sv|
+!s90 -reportprogress|300|./task2.sv|
+!i113 1
+R5
+vtask2_tb
+R6
+R0
+!i10b 1
+!s100 jb6OCJ_<F886fKIM5A5@?0
+I;GLhS4ac3aMNDS9=Xc:B80
+R1
+!s105 task2_tb_sv_unit
+S1
+R2
+w1792370153
+8./task2_tb.sv
+F./task2_tb.sv
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+!s107 ./task2_tb.sv|
+!s90 -reportprogress|300|./task2_tb.sv|
 !i113 1
 R5
