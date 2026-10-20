@@ -307,7 +307,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE task1_tb.sv
 set_global_assignment -name QIP_FILE ram32x3port2.qip
 set_global_assignment -name MIF_FILE ram32x3.mif
 set_global_assignment -name SYSTEMVERILOG_FILE DE1_SoC.sv
-set_global_assignment -name SYSTEMVERILOG_FILE task2_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE DE1_SoC_tb.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
@@ -681,3 +680,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE counter.sv

@@ -10,45 +10,32 @@ module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
 
    // Accounting for metastability by running the signal through two flip-flops
-   logic [9:0] metastability_SW, SW_synchronized;
-   logic reset1, reset;
+   logic [9:0] meta_SW, syncSW;
+   logic meta_reset, reset;
 
     always_ff @(posedge CLOCK_50) begin
-        metastability_SW <= SW;
-        SW_synchronized <= metastability_SW;
+        meta_SW <= SW;
+        syncSW <= meta_SW;
 
-        reset1 <= ~KEY[3];
-        reset <= reset1;
+        meta_reset <= ~KEY[3];
+        reset <= meta_reset;
     end
 
     // We iterate through a count of 50000000 since we're using CLOCK_50
-    logic [25:0] counter;
     logic [4:0] read_addr;
-
-    always_ff @(posedge CLOCK_50) begin
-        if (reset) begin
-            counter <= 0;
-            read_addr <= 0;
-        end
-        else if (counter == 26'd49_999_999) begin
-            counter <= 0;
-            read_addr <= read_addr + 5'd1;
-        end
-        else begin
-            counter <= counter + 26'd1;
-        end
-    end
+	 
+	 counter address_counter(.clk(CLOCK_50), .reset, .curr_addr(read_addr));
 
     // Enable writes only to the selected memory.
     logic wren2, wren3;
 
-    assign wren2 = SW_synchronized[0] & ~SW_synchronized[9] & ~reset;
-    assign wren3 = SW_synchronized[0] &  SW_synchronized[9] & ~reset;
+    assign wren2 = syncSW[0] & ~syncSW[9] & ~reset;
+    assign wren3 = syncSW[0] &  syncSW[9] & ~reset;
     logic [4:0] addr2;
 
     always_comb begin
         if (wren2)
-            addr2 = SW_synchronized[8:4];
+            addr2 = syncSW[8:4];
         else
             addr2 = read_addr;
     end
@@ -59,22 +46,22 @@ module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
         .clk    (CLOCK_50),
         .wren   (wren2),
         .addr   (addr2),
-        .dataIn (SW_synchronized[3:1]),
+        .dataIn (syncSW[3:1]),
         .q      (q2)
     );
 
     ram32x3port2 memory3 (
         .clock     (CLOCK_50),
-        .data      (SW_synchronized[3:1]),
+        .data      (syncSW[3:1]),
         .rdaddress (read_addr),
-        .wraddress (SW_synchronized[8:4]),
+        .wraddress (syncSW[8:4]),
         .wren      (wren3),
         .q         (q3)
     );
 
     // Display the selected memory's output.
     always_comb begin
-        if (SW_synchronized[9])
+        if (syncSW[9])
             dataOut = q3;
         else
             dataOut = q2;
@@ -82,12 +69,12 @@ module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 
     // Using HEX4 and HEX5 to display the write address
     seg7 write_addr_high (
-        .hex  ({3'b000, SW_synchronized[8]}),
+        .hex  ({3'b000, syncSW[8]}),
         .leds (HEX5)
     );
 
     seg7 write_addr_low (
-        .hex  (SW_synchronized[7:4]),
+        .hex  (syncSW[7:4]),
         .leds (HEX4)
     );
 
@@ -103,7 +90,7 @@ module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
     );
 
     seg7 input_display (
-        .hex  ({1'b0, SW_synchronized[3:1]}),
+        .hex  ({1'b0, syncSW[3:1]}),
         .leds (HEX1)
     );
 

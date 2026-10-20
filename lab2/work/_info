@@ -8,115 +8,163 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/balac/Projects/EE371/labs/ee371/lab2
+vDE1_SoC
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1792471571
+!i10b 1
+!s100 k9_LPZ0I=4cVIGbj_27Z52
+ITICS@>0W;kl2ckEbAj<Qz3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 DE1_SoC_sv_unit
+S1
+Z3 dC:/Users/abirl/ee_371/ee371/lab2
+w1792471162
+8./DE1_SoC.sv
+F./DE1_SoC.sv
+L0 6
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1792471571.000000
+!s107 ./DE1_SoC.sv|
+!s90 -reportprogress|300|./DE1_SoC.sv|
+!i113 1
+Z6 tCvgOpt 0
+n@d@e1_@so@c
+vDE1_SoC_tb
+R0
+R1
+!i10b 1
+!s100 _VbIE2AZGo=KBOD4RYST41
+IAE^PaoC@l;D]ag=]^`23G0
+R2
+!s105 DE1_SoC_tb_sv_unit
+S1
+R3
+w1792370165
+8./DE1_SoC_tb.sv
+F./DE1_SoC_tb.sv
+L0 6
+R4
+r1
+!s85 0
+31
+R5
+!s107 ./DE1_SoC_tb.sv|
+!s90 -reportprogress|300|./DE1_SoC_tb.sv|
+!i113 1
+R6
+n@d@e1_@so@c_tb
 vram32x3
-Z0 !s110 1792370489
+R1
 !i10b 1
 !s100 >i_=LX@Q5h;U6@m4D`gHo2
 IF9LFi]JIjV5GI?6l5GF;h1
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/Users/abirl/ee_371/ee371/lab2
+R2
+R3
 w1791925055
 8./ram32x3.v
 F./ram32x3.v
 L0 40
-Z3 OV;L;10.5b;63
+R4
 r1
 !s85 0
 31
-Z4 !s108 1792370489.000000
+R5
 !s107 ./ram32x3.v|
 !s90 -reportprogress|300|./ram32x3.v|
 !i113 1
-Z5 tCvgOpt 0
+R6
 vtask1
-Z6 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 R0
+R1
 !i10b 1
 !s100 Odhfd:LN3MPo_c0DloI_K2
 I;PJC6YWmiajLQmj3L6h]P3
-R1
+R2
 !s105 task1_sv_unit
 S1
-R2
+R3
 Z7 w1792260367
 8./task1.sv
 F./task1.sv
 L0 11
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 ./task1.sv|
 !s90 -reportprogress|300|./task1.sv|
 !i113 1
-R5
-vtask1_tb
 R6
+vtask1_tb
 R0
+R1
 !i10b 1
 !s100 nc]@gk;mZiYlfz;CUHh3?1
 I2_kQV_MOmlVd2C?oj4mRc3
-R1
+R2
 !s105 task1_tb_sv_unit
 S1
-R2
+R3
 R7
 8./task1_tb.sv
 F./task1_tb.sv
 L0 6
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 ./task1_tb.sv|
 !s90 -reportprogress|300|./task1_tb.sv|
 !i113 1
-R5
-vtask2
 R6
+vtask2
 R0
+R1
 !i10b 1
 !s100 @BacCnM0z?gGecdEkjM<53
 I@1TlVXe?9=84DzC>ToPiW2
-R1
+R2
 !s105 task2_sv_unit
 S1
-R2
+R3
 w1792368440
 8./task2.sv
 F./task2.sv
 L0 6
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 ./task2.sv|
 !s90 -reportprogress|300|./task2.sv|
 !i113 1
-R5
-vtask2_tb
 R6
+vtask2_tb
 R0
+R1
 !i10b 1
 !s100 jb6OCJ_<F886fKIM5A5@?0
 I;GLhS4ac3aMNDS9=Xc:B80
-R1
+R2
 !s105 task2_tb_sv_unit
 S1
-R2
+R3
 w1792370153
 8./task2_tb.sv
 F./task2_tb.sv
 L0 6
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 ./task2_tb.sv|
 !s90 -reportprogress|300|./task2_tb.sv|
 !i113 1
-R5
+R6

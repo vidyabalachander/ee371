@@ -1,5 +1,5 @@
 Assembler report for DE1_SoC
-Tue Oct 13 16:53:42 2026
+Mon Oct 19 21:42:18 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/balac/Projects/EE371/labs/ee371/lab2/output_files/DE1_SoC.sof
+  5. Assembler Device Options: C:/Users/abirl/ee_371/ee371/lab2/output_files/DE1_SoC.sof
   6. Assembler Messages
 
 
@@ -38,9 +38,9 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Oct 13 16:53:42 2026 ;
+; Assembler Status      ; Successful - Mon Oct 19 21:42:18 2026 ;
 ; Revision Name         ; DE1_SoC                               ;
-; Top-level Entity Name ; task1                                 ;
+; Top-level Entity Name ; DE1_SoC                               ;
 ; Family                ; Cyclone V                             ;
 ; Device                ; 5CSEMA5F31C6                          ;
 +-----------------------+---------------------------------------+
@@ -53,23 +53,23 @@ agreement for further details.
 +--------+---------+---------------+
 
 
-+------------------------------------------------------------------------+
-; Assembler Generated Files                                              ;
-+------------------------------------------------------------------------+
-; File Name                                                              ;
-+------------------------------------------------------------------------+
-; C:/Users/balac/Projects/EE371/labs/ee371/lab2/output_files/DE1_SoC.sof ;
-+------------------------------------------------------------------------+
++-----------------------------------------------------------+
+; Assembler Generated Files                                 ;
++-----------------------------------------------------------+
+; File Name                                                 ;
++-----------------------------------------------------------+
+; C:/Users/abirl/ee_371/ee371/lab2/output_files/DE1_SoC.sof ;
++-----------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/balac/Projects/EE371/labs/ee371/lab2/output_files/DE1_SoC.sof ;
-+----------------+---------------------------------------------------------------------------------+
-; Option         ; Setting                                                                         ;
-+----------------+---------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00B45495                                                                      ;
-; Checksum       ; 0x00B45495                                                                      ;
-+----------------+---------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/abirl/ee_371/ee371/lab2/output_files/DE1_SoC.sof ;
++----------------+--------------------------------------------------------------------+
+; Option         ; Setting                                                            ;
++----------------+--------------------------------------------------------------------+
+; JTAG usercode  ; 0x00BAFF3E                                                         ;
+; Checksum       ; 0x00BAFF3E                                                         ;
++----------------+--------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Oct 13 16:53:38 2026
+    Info: Processing started: Mon Oct 19 21:42:08 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4836 megabytes
-    Info: Processing ended: Tue Oct 13 16:53:42 2026
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4846 megabytes
+    Info: Processing ended: Mon Oct 19 21:42:18 2026
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:08
 
 

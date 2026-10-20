@@ -12,10 +12,12 @@ module DE1_SoC_tb();
 
    DE1_SoC dut (.*);
 
-   // 50 MHz clock: period = 20 ns.
+   // CLOCK_50 will have a period of 20 ns
    initial begin
        CLOCK_50 = 0;
-       forever #10 CLOCK_50 = ~CLOCK_50;
+       forever 
+			#10 
+			CLOCK_50 = ~CLOCK_50;
    end
 
 	initial begin
@@ -71,5 +73,6 @@ module DE1_SoC_tb();
       repeat (5) @(negedge CLOCK_50);
       $display("Task 2 unchanged: expected 5");
       $stop;
+		
     end
 endmodule //DE1_SOC_tb
