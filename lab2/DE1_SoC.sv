@@ -3,11 +3,11 @@
 	and RAM with separate read and write ports. Hex displays are used to display the value being written, the address
 	the value is written at, or the address a value is read from.
 */
-module DE1_SoC ();
-   input logic CLOCK_50,
-   input logic [9:0] SW,
-   input logic [3:0] KEY,
-	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5
+module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
+   input logic CLOCK_50;
+   input logic [9:0] SW;
+   input logic [3:0] KEY;
+	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
 
    // Accounting for metastability by running the signal through two flip-flops
    logic [9:0] metastability_SW, SW_synchronized;
@@ -103,7 +103,7 @@ module DE1_SoC ();
     );
 
     seg7 input_display (
-        .hex  ({1'b0, SW_sync[3:1]}),
+        .hex  ({1'b0, SW_synchronized[3:1]}),
         .leds (HEX1)
     );
 
