@@ -10,15 +10,15 @@ module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
 
    // Accounting for metastability by running the signal through two flip-flops
-   logic [9:0] meta_SW, syncSW;
-   logic meta_reset, reset;
+   logic [9:0] metaSW, syncSW;
+   logic metareset, reset;
 
     always_ff @(posedge CLOCK_50) begin
-        meta_SW <= SW;
-        syncSW <= meta_SW;
+        metaSW <= SW;
+        syncSW <= metaSW;
 
-        meta_reset <= ~KEY[3];
-        reset <= meta_reset;
+        metareset <= ~KEY[3];
+        reset <= metareset;
     end
 
     // We iterate through a count of 50000000 since we're using CLOCK_50

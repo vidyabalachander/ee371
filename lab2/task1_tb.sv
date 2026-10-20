@@ -1,6 +1,6 @@
 /*
 	This module tests task1, which is the prebuilt 32x3 RAM from Quartus.
-	It simulates reading, writing, and overwriting the RAM.
+	It simulates reading, writing, and overwriting the RAM in both the library-based and array-based RAM implementations.
 */
 `timescale 1 ps / 1 ps
 module task1_tb;
@@ -12,6 +12,9 @@ module task1_tb;
 	logic [2:0] DataOut;
 	
 	task1 dut(.*);
+	
+	logic [2:0] q;
+	task2 dut2(.clk, .addr(Address), .wren(Write), .dataIn(DataIn), .q);
 	
 	parameter period = 100;
 	initial begin
@@ -38,13 +41,13 @@ module task1_tb;
 						
 						Address <= 5'b00000; @(posedge clk);
 						Address <= 5'b00101; @(posedge clk);
-						$display("Expected: 3'b101; DataOut: 3'b%b", DataOut);
+						$display("Expected: 3'b101; task1: 3'b%b, task2: 3'b%b", DataOut, q);
 						Address <= 5'b01101; @(posedge clk);
-						$display("Expected: 3'b011; DataOut: 3'b%b", DataOut);
+						$display("Expected: 3'b011; task1: 3'b%b, task2: 3'b%b", DataOut, q);
 						Address <= 5'b11111; @(posedge clk);
-						$display("Expected: 3'b110; DataOut: 3'b%b", DataOut);
+						$display("Expected: 3'b110; task1: 3'b%b, task2: 3'b%b", DataOut, q);
 													@(posedge clk);
-						$display("Expected: 3'b111; DataOut: 3'b%b", DataOut);
+						$display("Expected: 3'b111; task1: 3'b%b, task2: 3'b%b", DataOut, q);
 		
 		// Write mode (overwriting what was there before)
 		Write <= 1;
@@ -57,13 +60,13 @@ module task1_tb;
 		Write <= 0;
 						Address <= 5'b00000; @(posedge clk);
 						Address <= 5'b00101; @(posedge clk);
-						$display("Expected: 3'b011; DataOut: 3'b%b", DataOut);
+						$display("Expected: 3'b011; task1: 3'b%b, task2: 3'b%b", DataOut, q);
 						Address <= 5'b01101; @(posedge clk);
-						$display("Expected: 3'b101; DataOut: 3'b%b", DataOut);
+						$display("Expected: 3'b101; task1: 3'b%b, task2: 3'b%b", DataOut, q);
 						Address <= 5'b11111; @(posedge clk);
-						$display("Expected: 3'b111; DataOut: 3'b%b", DataOut);
+						$display("Expected: 3'b111; task1: 3'b%b, task2: 3'b%b", DataOut, q);
 													@(posedge clk);
-						$display("Expected: 3'b110; DataOut: 3'b%b", DataOut);
+						$display("Expected: 3'b110; task1: 3'b%b, task2: 3'b%b", DataOut, q);
 		$stop;		
 	end // ending simulation
 
