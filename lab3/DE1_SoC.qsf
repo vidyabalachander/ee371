@@ -685,3 +685,6 @@ set_global_assignment -name VERILOG_FILE Altera_UP_Audio_Out_Serializer.v
 set_global_assignment -name VERILOG_FILE Altera_UP_Audio_In_Deserializer.v
 set_global_assignment -name SDC_FILE DE1_SOC_golden_top.sdc
 set_global_assignment -name VERILOG_FILE Altera_UP_Audio_Bit_Counter.v
+set_global_assignment -name QIP_FILE rom24.qip
+set_global_assignment -name SYSTEMVERILOG_FILE rom_to_codec.sv
+set_global_assignment -name SYSTEMVERILOG_FILE task2.sv
