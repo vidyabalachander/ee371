@@ -1,5 +1,5 @@
 Fitter report for DE1_SoC
-Fri Oct 23 13:50:15 2026
+Fri Oct 23 14:09:51 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Fri Oct 23 13:50:15 2026       ;
+; Fitter Status                   ; Successful - Fri Oct 23 14:09:51 2026       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SOC_golden_top                          ;
@@ -2790,12 +2790,12 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.15 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.14 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 96 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin AUD_ADCLRCK has a permanently disabled output enable File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/DE1_SOC_golden_top.v Line: 70
@@ -2896,10 +2896,10 @@ Warning (169064): Following 96 pins have no output enable or a GND or VCC output
     Info (169065): Pin PS2_DAT2 has a permanently disabled output enable File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/DE1_SOC_golden_top.v Line: 218
 Info (144001): Generated suppressed messages file C:/Users/balac/Projects/EE371/labs/ee371/lab3/output_files/DE1_SoC.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 6941 megabytes
-    Info: Processing ended: Fri Oct 23 13:50:15 2026
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:52
+    Info: Peak virtual memory: 6946 megabytes
+    Info: Processing ended: Fri Oct 23 14:09:52 2026
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:50
 
 
 +----------------------------+

@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
-// DATE "10/23/2026 13:50:29"
+// DATE "10/23/2026 14:10:03"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -88,64 +88,64 @@ module DE1_SOC_golden_top (
 	VGA_R,
 	VGA_SYNC_N,
 	VGA_VS);
-output 	reg ADC_CONVST ;
-output 	reg ADC_DIN ;
-input 	reg ADC_DOUT ;
-output 	reg ADC_SCLK ;
-input 	reg AUD_ADCDAT ;
-inout 	reg AUD_ADCLRCK ;
-inout 	reg AUD_BCLK ;
-output 	reg AUD_DACDAT ;
-inout 	reg AUD_DACLRCK ;
-output 	reg AUD_XCK ;
-input 	reg CLOCK2_50 ;
-input 	reg CLOCK3_50 ;
-input 	reg CLOCK4_50 ;
-input 	reg CLOCK_50 ;
-output 	reg [12:0] DRAM_ADDR ;
-output 	reg [1:0] DRAM_BA ;
-output 	reg DRAM_CAS_N ;
-output 	reg DRAM_CKE ;
-output 	reg DRAM_CLK ;
-output 	reg DRAM_CS_N ;
-inout 	reg [15:0] DRAM_DQ ;
-output 	reg DRAM_LDQM ;
-output 	reg DRAM_RAS_N ;
-output 	reg DRAM_UDQM ;
-output 	reg DRAM_WE_N ;
-output 	reg FAN_CTRL ;
-output 	reg FPGA_I2C_SCLK ;
-inout 	reg FPGA_I2C_SDAT ;
-inout 	reg [35:0] GPIO_0 ;
-inout 	reg [35:0] GPIO_1 ;
-output 	reg [6:0] HEX0 ;
-output 	reg [6:0] HEX1 ;
-output 	reg [6:0] HEX2 ;
-output 	reg [6:0] HEX3 ;
-output 	reg [6:0] HEX4 ;
-output 	reg [6:0] HEX5 ;
-input 	reg IRDA_RXD ;
-output 	reg IRDA_TXD ;
-input 	reg [3:0] KEY ;
-output 	reg [9:0] LEDR ;
-inout 	reg PS2_CLK ;
-inout 	reg PS2_CLK2 ;
-inout 	reg PS2_DAT ;
-inout 	reg PS2_DAT2 ;
-input 	reg [9:0] SW ;
-input 	reg TD_CLK27 ;
-input 	reg [7:0] TD_DATA ;
-input 	reg TD_HS ;
-output 	reg TD_RESET_N ;
-input 	reg TD_VS ;
-output 	reg [7:0] VGA_B ;
-output 	reg VGA_BLANK_N ;
-output 	reg VGA_CLK ;
-output 	reg [7:0] VGA_G ;
-output 	reg VGA_HS ;
-output 	reg [7:0] VGA_R ;
-output 	reg VGA_SYNC_N ;
-output 	reg VGA_VS ;
+output 	ADC_CONVST;
+output 	ADC_DIN;
+input 	ADC_DOUT;
+output 	ADC_SCLK;
+input 	AUD_ADCDAT;
+output 	AUD_ADCLRCK;
+output 	AUD_BCLK;
+output 	AUD_DACDAT;
+output 	AUD_DACLRCK;
+output 	AUD_XCK;
+input 	CLOCK2_50;
+input 	CLOCK3_50;
+input 	CLOCK4_50;
+input 	CLOCK_50;
+output 	[12:0] DRAM_ADDR;
+output 	[1:0] DRAM_BA;
+output 	DRAM_CAS_N;
+output 	DRAM_CKE;
+output 	DRAM_CLK;
+output 	DRAM_CS_N;
+output 	[15:0] DRAM_DQ;
+output 	DRAM_LDQM;
+output 	DRAM_RAS_N;
+output 	DRAM_UDQM;
+output 	DRAM_WE_N;
+output 	FAN_CTRL;
+output 	FPGA_I2C_SCLK;
+output 	FPGA_I2C_SDAT;
+output 	[35:0] GPIO_0;
+output 	[35:0] GPIO_1;
+output 	[6:0] HEX0;
+output 	[6:0] HEX1;
+output 	[6:0] HEX2;
+output 	[6:0] HEX3;
+output 	[6:0] HEX4;
+output 	[6:0] HEX5;
+input 	IRDA_RXD;
+output 	IRDA_TXD;
+input 	[3:0] KEY;
+output 	[9:0] LEDR;
+output 	PS2_CLK;
+output 	PS2_CLK2;
+output 	PS2_DAT;
+output 	PS2_DAT2;
+input 	[9:0] SW;
+input 	TD_CLK27;
+input 	[7:0] TD_DATA;
+input 	TD_HS;
+output 	TD_RESET_N;
+input 	TD_VS;
+output 	[7:0] VGA_B;
+output 	VGA_BLANK_N;
+output 	VGA_CLK;
+output 	[7:0] VGA_G;
+output 	VGA_HS;
+output 	[7:0] VGA_R;
+output 	VGA_SYNC_N;
+output 	VGA_VS;
 
 // Design Ports Information
 // ADC_CONVST	=>  Location: PIN_AJ4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA

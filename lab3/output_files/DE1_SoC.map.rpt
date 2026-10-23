@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Fri Oct 23 13:49:48 2026
+Fri Oct 23 14:09:28 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Oct 23 13:49:48 2026       ;
+; Analysis & Synthesis Status     ; Successful - Fri Oct 23 14:09:28 2026       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SOC_golden_top                          ;
@@ -258,7 +258,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Oct 23 13:49:42 2026
+    Info: Processing started: Fri Oct 23 14:09:21 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -292,12 +292,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file altera_
     Info (12023): Found entity 1: Altera_UP_Audio_In_Deserializer File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/Altera_UP_Audio_In_Deserializer.v Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file altera_up_audio_bit_counter.v
     Info (12023): Found entity 1: Altera_UP_Audio_Bit_Counter File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/Altera_UP_Audio_Bit_Counter.v Line: 49
-Info (12021): Found 1 design units, including 1 entities, in source file rom24.v
-    Info (12023): Found entity 1: rom24 File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/rom24.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file rom_to_codec.sv
     Info (12023): Found entity 1: rom_to_codec File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/rom_to_codec.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file task2.sv
     Info (12023): Found entity 1: task2 File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/task2.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file rom48000.v
+    Info (12023): Found entity 1: rom48000 File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/rom48000.v Line: 40
 Info (12127): Elaborating entity "DE1_SOC_golden_top" for the top level hierarchy
 Warning (10034): Output port "DRAM_ADDR" at DE1_SOC_golden_top.v(100) has no driver File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/DE1_SOC_golden_top.v Line: 100
 Warning (10034): Output port "DRAM_BA" at DE1_SOC_golden_top.v(101) has no driver File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/DE1_SOC_golden_top.v Line: 101
@@ -333,7 +333,6 @@ Warning (10034): Output port "VGA_CLK" at DE1_SOC_golden_top.v(239) has no drive
 Warning (10034): Output port "VGA_HS" at DE1_SOC_golden_top.v(241) has no driver File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/DE1_SOC_golden_top.v Line: 241
 Warning (10034): Output port "VGA_SYNC_N" at DE1_SOC_golden_top.v(243) has no driver File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/DE1_SOC_golden_top.v Line: 243
 Warning (10034): Output port "VGA_VS" at DE1_SOC_golden_top.v(246) has no driver File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/DE1_SOC_golden_top.v Line: 246
-Warning (12158): Entity "DE1_SOC_golden_top" contains only dangling pins
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/DE1_SOC_golden_top.v Line: 70
     Warning (13040): bidirectional pin "AUD_BCLK" has no driver File: C:/Users/balac/Projects/EE371/labs/ee371/lab3/DE1_SOC_golden_top.v Line: 71
@@ -584,10 +583,10 @@ Info (21057): Implemented 241 device resources after synthesis - the final resou
     Info (21058): Implemented 32 input pins
     Info (21059): Implemented 113 output pins
     Info (21060): Implemented 96 bidirectional pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 280 warnings
-    Info: Peak virtual memory: 4807 megabytes
-    Info: Processing ended: Fri Oct 23 13:49:48 2026
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 279 warnings
+    Info: Peak virtual memory: 4813 megabytes
+    Info: Processing ended: Fri Oct 23 14:09:28 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:12
 
 
