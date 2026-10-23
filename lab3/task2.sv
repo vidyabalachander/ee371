@@ -24,12 +24,14 @@ module task2 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	// Your code goes here 
 	/////////////////////////////////
 	
-	assign writedata_left = readdata_left;
-	assign writedata_right = readdata_right;
+	logic [23:0] rom_data_left, rom_data_right;
+	
+	assign writedata_left = rom_data_left; // readdata_left;
+	assign writedata_right = rom_data_right; // readdata_right;
 	assign read = read_ready & write_ready;
 	assign write = read_ready & write_ready;
 	
-	logic [23:0] rom_data_left, rom_data_right;
+	
 	
 	rom_to_codec transfer (.clk(CLOCK_50), .write, .writedata_left(rom_data_left),
 									.writedata_right(rom_data_right));
