@@ -1,6 +1,6 @@
-module rom_to_codec #(parameter counter_max = 18'd48000)(clk, write, writedata_left, writedata_right);
+module rom_to_codec #(parameter counter_max = 18'd48000)(clk, write, rom_data_left, rom_data_right);
 	input logic clk, write;
-	output logic [23:0] writedata_left, writedata_right;
+	output logic [23:0] rom_data_left, rom_data_right;
 	
 	logic [15:0] counter = 0;
 	logic [23:0] data;
@@ -15,8 +15,8 @@ module rom_to_codec #(parameter counter_max = 18'd48000)(clk, write, writedata_l
 			else 
 				counter <= 0;
 				
-			writedata_left <= data;
-			writedata_right <= data;
+			rom_data_left <= data;
+			rom_data_right <= data;
 		end
 		else
 			counter <= counter;

@@ -1,0 +1,9 @@
+module fir_filter #(parameter N = 4'd8)(data_in);
+
+	input [23:0] data_in;
+	
+	logic divided = data_in >> N;
+	
+	fifo buffer ()
+	
+endmodule
