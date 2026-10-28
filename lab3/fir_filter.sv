@@ -14,7 +14,8 @@ module fir_filter #(parameter DATA_WIDTH = 24, parameter LOG_2_N = 3)
 	
 	// dividing data by N
 	logic [DATA_WIDTH-1:0] div_data;
-	assign div_data = data_in >> LOG_2_N;
+	// assign div_data = data_in >> LOG_2_N;
+	assign div_data = {{LOG_2_N{data_in[DATA_WIDTH-1]}}, data_in[DATA_WIDTH-1:LOG_2_N]};
 	
 	// buffer
 	logic [DATA_WIDTH-1:0] buffer_out;
@@ -23,7 +24,7 @@ module fir_filter #(parameter DATA_WIDTH = 24, parameter LOG_2_N = 3)
 			
 	// if full, start getting data out of the buffer
 	logic signed [DATA_WIDTH-1:0] sum_div_data_buffer_out;
-	assign sum_div_data_buffer_out = full ? (buffer_out * -1) + div_data : 24'b0;
+	assign sum_div_data_buffer_out = div_data + (full ? (-buffer_out) : 24'b0);
 	
 	// accumulator
 	logic signed [DATA_WIDTH-1:0] accumulator;

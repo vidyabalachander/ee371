@@ -25,7 +25,9 @@ module DE1_SoC (CLOCK_50, CLOCK2_50, SW, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_
 	// Your code goes here 
 	/////////////////////////////////
 	
-	wire [23:0] rom_data_left, rom_data_right;
+	logic [23:0] rom_data_left, rom_data_right;
+	
+	logic [23:0] unfiltered_left, unfiltered_right;
 	
 	assign unfiltered_left = SW[9] ? rom_data_left : readdata_left;
 	assign unfiltered_right = SW[9] ? rom_data_right : readdata_right;

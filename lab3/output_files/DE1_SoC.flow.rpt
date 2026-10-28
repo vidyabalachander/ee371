@@ -1,5 +1,5 @@
 Flow report for DE1_SoC
-Fri Oct 23 14:18:24 2026
+Wed Oct 28 15:09:14 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Oct 23 14:18:24 2026       ;
+; Flow Status                     ; Successful - Wed Oct 28 15:09:14 2026       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SOC_golden_top                          ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/23/2026 14:17:42 ;
+; Start date & time ; 10/28/2026 15:08:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC             ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+--------------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name        ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+--------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 209942381879771.179279026239448        ; --            ; --                 ; --             ;
+; COMPILER_SIGNATURE_ID               ; 209942381879771.179322530434732        ; --            ; --                 ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --                 ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --                 ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --                 ; eda_simulation ;
@@ -102,12 +102,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 4799 MB             ; 00:00:13                           ;
-; Fitter                    ; 00:00:22     ; 1.0                     ; 6947 MB             ; 00:00:45                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 4837 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 5167 MB             ; 00:00:04                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 4796 MB             ; 00:00:13                           ;
+; Fitter                    ; 00:00:28     ; 1.0                     ; 6940 MB             ; 00:00:55                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 4840 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 5165 MB             ; 00:00:04                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4747 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:37     ; --                      ; --                  ; 00:01:07                           ;
+; Total                     ; 00:00:45     ; --                      ; --                  ; 00:01:17                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
