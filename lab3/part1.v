@@ -1,3 +1,9 @@
+/* This module allows the user to play a music file into the audio input of the 
+ * DE1-SoC, which will simultaneously be played through the audio output of the
+ * device. It takes in two clocks and many inputs relating to the audio codec.
+ * We were provided most of this code, modifying it slightly to pass the audio
+ * input to the output only when the CODEC is ready.
+*/
 module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK, 
 		        AUD_DACLRCK, AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT, AUD_DACDAT);
 
@@ -81,6 +87,4 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 		AUD_DACDAT
 	);
 
-endmodule
-
-
+endmodule // part1

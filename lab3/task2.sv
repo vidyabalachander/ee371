@@ -1,9 +1,14 @@
-/* This file is a copy of part1 with some changes.
+/* This module allows the user to play a music file into the audio input of the 
+ * DE1-SoC when SW9 = 0, and a tone from a ROM when SW9 = 1. The chosen audio
+ * input can be played through the audio output of the device. It takes in two 
+ * clocks, on-board switches and keys, and many inputs relating to the audio codec.
+ * We were provided most of this code from the specification.
 */
-module task2 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK, 
+module task2 (CLOCK_50, CLOCK2_50, SW, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK, 
 		        AUD_DACLRCK, AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT, AUD_DACDAT);
 
 	input CLOCK_50, CLOCK2_50;
+	input [9:0] SW;
 	input [0:0] KEY;
 	// I2C Audio/Video config interface
 	output FPGA_I2C_SCLK;
@@ -26,8 +31,9 @@ module task2 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	
 	wire [23:0] rom_data_left, rom_data_right;
 	
-	assign writedata_left = rom_data_left; // readdata_left;
-	assign writedata_right = rom_data_right; // readdata_right;
+	assign writedata_left = SW[9] ? rom_data_left : readdata_left;
+	assign writedata_right = SW[9] ? rom_data_right : readdata_right;
+	
 	assign read = read_ready & write_ready;
 	assign write = read_ready & write_ready;
 	
@@ -88,6 +94,4 @@ module task2 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 		AUD_DACDAT
 	);
 
-endmodule
-
-
+endmodule // task2

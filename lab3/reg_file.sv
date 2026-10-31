@@ -1,8 +1,8 @@
 /* Register file module for specified data and address bus widths.
  * Asynchronous read port (r_addr -> r_data) and synchronous write
- * port (w_data -> w_addr if w_en).
+ * port (w_data -> w_addr if w_en). Provided in HW3 code.
  */
-module reg_file #(parameter DATA_WIDTH=24, ADDR_WIDTH=3)
+module reg_file #(parameter DATA_WIDTH=24, ADDR_WIDTH=9)
                 (clk, w_data, w_en, w_addr, r_addr, r_data);
 
 	input  logic clk, w_en;

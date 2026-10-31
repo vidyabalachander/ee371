@@ -4,8 +4,9 @@
  * w_data to the tail of the buffer.
  * Outputs: 1-bit empty and full indicate the status of the buffer
  * and r_data holds the value of the head of the buffer (unless empty).
+ * Provided in HW3 Code.
  */
-module fifo #(parameter DATA_WIDTH=24, ADDR_WIDTH=3)
+module fifo #(parameter DATA_WIDTH=24, ADDR_WIDTH=9)
             (clk, reset, rd, wr, empty, full, w_data, r_data);
 
 	input  logic clk, reset, rd, wr;

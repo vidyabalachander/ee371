@@ -1,4 +1,10 @@
-/* This file is a copy of part1 with some changes.
+/* This file is the top level module of the digital signal processor. It allows a user
+ * to play a music file into the audio input of the DE1_SoC when SW9 = 0 and a tone 
+ * from a ROM when SW9 = 1. Additionally, the user can choose to filter the audio by
+ * switching SW8 to 1, or keep the audio unfiltered by setting SW8 to 0. The chosen 
+ * audio input can be played through the audio output of the device. The file takes in
+ * two clocks, on board switches and keys, and many inputs relating to the CODEC. It also
+ * outputs many necessary audio CODEC outputs.  
 */
 module DE1_SoC (CLOCK_50, CLOCK2_50, SW, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK, 
 		        AUD_DACLRCK, AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT, AUD_DACDAT);
@@ -25,26 +31,29 @@ module DE1_SoC (CLOCK_50, CLOCK2_50, SW, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_
 	// Your code goes here 
 	/////////////////////////////////
 	
-	logic [23:0] rom_data_left, rom_data_right;
-	
-	logic [23:0] unfiltered_left, unfiltered_right;
-	
-	assign unfiltered_left = SW[9] ? rom_data_left : readdata_left;
-	assign unfiltered_right = SW[9] ? rom_data_right : readdata_right;
-	
 	assign read = read_ready & write_ready;
 	assign write = read_ready & write_ready;
 	
+	logic [23:0] rom_data_left, rom_data_right;
+	
+	// choosing the music file or the ROM
+	logic [23:0] unfiltered_left, unfiltered_right;
+	assign unfiltered_left = SW[9] ? rom_data_left : readdata_left;
+	assign unfiltered_right = SW[9] ? rom_data_right : readdata_right;
+
+	// choosing the filtered or unfiltered data
 	logic [23:0] filtered_left, filtered_right;
 	assign writedata_left = SW[8] ? filtered_left : unfiltered_left;
 	assign writedata_right = SW[8] ? filtered_right : unfiltered_right;
 	
+	// transfers data from the ROM
 	rom_to_codec transfer (.clk(CLOCK_50), .write, .rom_data_left, .rom_data_right);
-									
-	fir_filter #(.DATA_WIDTH(24), .LOG_2_N(3)) filter_left
+	
+	// instantiating the filters for both left and right channels
+	fir_filter #(.DATA_WIDTH(24), .LOG_2_N(9)) filter_left
 						(.clk(CLOCK_50), .reset, .enable(read), .data_in(unfiltered_left), .data_out(filtered_left));
 									
-	fir_filter #(.DATA_WIDTH(24), .LOG_2_N(3)) filter_right
+	fir_filter #(.DATA_WIDTH(24), .LOG_2_N(9)) filter_right
 						(.clk(CLOCK_50), .reset, .enable(read), .data_in(unfiltered_right), .data_out(filtered_right));
 									
 									
@@ -104,6 +113,4 @@ module DE1_SoC (CLOCK_50, CLOCK2_50, SW, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_
 		AUD_DACDAT
 	);
 
-endmodule
-
-
+endmodule // DE1_SoC

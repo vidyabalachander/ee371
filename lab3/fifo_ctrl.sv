@@ -1,9 +1,9 @@
 /* FIFO controller to manage a register file as a circular queue.
  * Manipulates output read and write addresses based on 1-bit
  * read (rd) and write (wr) requests and current buffer status
- * signals empty and full.
+ * signals empty and full. Provided in HW3 Code.
  */
-module fifo_ctrl #(parameter ADDR_WIDTH=3)
+module fifo_ctrl #(parameter ADDR_WIDTH=9)
                  (clk, reset, rd, wr, empty, full, w_addr, r_addr);
 	
 	input  logic clk, reset, rd, wr;
