@@ -1,0 +1,4 @@
+module rom_to_codec_testbench ();
+	logic clk, write;
+	logic [23:0] rom_data_left, rom_data_right;
+endmodule 

@@ -1,0 +1,10 @@
+module fir_filter_tb();
+	
+	logic clk, reset, enable;
+	logic [23:0] data_in, data_out;
+	
+	fir_filter #(.DATA_WIDTH(24), .LOG_2_N(3)) dut(.*);
+	
+	
+	
+endmodule 

@@ -1,0 +1,820 @@
+# Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+cd C://users/abirl/ee_371/ee71/ee371/lab3
+# couldn't change working directory to "C://users/abirl/ee_371/ee71/ee371/lab3": no such file or directory
+cd C:/Users/abirl/ee_371/ee371/ee371/lab3
+do runlab.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:10:09 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# ** Error: (vlog-13069) ./fir_filter_tb.sv(75): near "end": syntax error, unexpected end, expecting ';'.
+# ** Error: ./reg_file.sv(14): (vlog-2730) Undefined variable: 'DATA_WIDTH'.
+# ** Error: ./reg_file.sv(14): (vlog-2730) Undefined variable: 'ADDR_WIDTH'.
+# ** Error: ./reg_file.sv(17): Illegal declaration after the statement near line '11'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: ./reg_file.sv(22): (vlog-2730) Undefined variable: 'r_data'.
+# ** Error: ./reg_file.sv(22): (vlog-2730) Undefined variable: 'r_addr'.
+# ** Error: ./reg_file.sv(22): LHS in procedural continuous assignment may not be a net: r_data.
+# ** Error: (vlog-13069) ./reg_file.sv(24): near "endmodule": syntax error, unexpected endmodule.
+# ** Warning: ./rom_to_codec.sv(13): (vlog-2244) Variable 'counter' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# ** Error: ./rom_to_codec.sv(16): Illegal declaration after the statement near line '11'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: ./rom_to_codec.sv(26): (vlog-2730) Undefined variable: 'rom_data_left'.
+# ** Error: ./rom_to_codec.sv(27): (vlog-2730) Undefined variable: 'rom_data_right'.
+# ** Error: (vlog-13069) ./rom_to_codec.sv(29): near "else": syntax error, unexpected else.
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# End time: 20:10:09 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 1
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 16
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./*.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:10:40 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 20:10:40 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:10:40 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 20:10:40 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work rom_to_codec_tb -Lf altera_mf_ver 
+# Start time: 20:10:40 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.rom_to_codec_tb
+# Loading work.rom_to_codec
+# Loading work.rom48000
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'rom_to_codec_tb' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /rom_to_codec_tb/dut/rom File: ./rom48000.v
+# Loading altera_mf_ver.altsyncram
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab.do PAUSED at line 25
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:11:37 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 20:11:37 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:11:37 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 20:11:37 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work rom_to_codec_tb -Lf altera_mf_ver 
+# Start time: 20:10:40 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.rom_to_codec_tb
+# Loading work.rom_to_codec
+# Loading work.rom48000
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Error: Cannot open macro file: rom_to_codec_wave.do
+# Error in macro ./runlab.do line 31
+# Cannot open macro file: rom_to_codec_wave.do
+#     while executing
+# "do rom_to_codec_wave.do"
+add wave -position end  sim:/rom_to_codec_tb/period
+add wave -position end  sim:/rom_to_codec_tb/clk
+add wave -position end  sim:/rom_to_codec_tb/write
+add wave -position end  sim:/rom_to_codec_tb/rom_data_left
+add wave -position end  sim:/rom_to_codec_tb/rom_data_right
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/abirl/ee_371/ee371/ee371/lab3/rom_to_codec_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:11:59 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 20:11:59 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:11:59 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 20:11:59 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:12:00 on Nov 01,2026, Elapsed time: 0:01:20
+# Errors: 4, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work rom_to_codec_tb -Lf altera_mf_ver 
+# Start time: 20:12:00 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.rom_to_codec_tb
+# Loading work.rom_to_codec
+# Loading work.rom48000
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./rom_to_codec_tb.sv(50)
+#    Time: 1850 ps  Iteration: 1  Instance: /rom_to_codec_tb
+# Break in Module rom_to_codec_tb at ./rom_to_codec_tb.sv line 50
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:18:41 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# ** Error (suppressible): (vlog-12003) ./rom_to_codec.sv(23): Variable 'counter' written by continuous and procedural assignments. See ./rom_to_codec.sv(14). 
+# ** Error (suppressible): (vlog-12003) ./rom_to_codec.sv(25): Variable 'counter' written by continuous and procedural assignments. See ./rom_to_codec.sv(14). 
+# ** Error (suppressible): (vlog-12003) ./rom_to_codec.sv(31): Variable 'counter' written by continuous and procedural assignments. See ./rom_to_codec.sv(14). 
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# End time: 20:18:41 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 16
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./*.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:06 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# ** Error: (vlog-13069) ./rom_to_codec.sv(15): near "<=": syntax error, unexpected <=.
+# ** Error: ./rom_to_codec.sv(15): (vlog-13205) Syntax error found in the scope following 'counter'. Is there a missing '::'?
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# End time: 20:20:06 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 16
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./*.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:28 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# ** Error: (vlog-13069) ./rom_to_codec.sv(15): near "<=": syntax error, unexpected <=.
+# ** Error: ./rom_to_codec.sv(15): (vlog-13205) Syntax error found in the scope following 'counter'. Is there a missing '::'?
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# End time: 20:20:28 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 16
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./*.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:21:52 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 20:21:52 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:21:52 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 20:21:53 on Nov 01,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 20:21:57 on Nov 01,2026, Elapsed time: 0:09:57
+# Errors: 13, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work rom_to_codec_tb -Lf altera_mf_ver 
+# Start time: 20:21:58 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.rom_to_codec_tb
+# Loading work.rom_to_codec
+# Loading work.rom48000
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./rom_to_codec_tb.sv(51)
+#    Time: 1850 ps  Iteration: 1  Instance: /rom_to_codec_tb
+# Break in Module rom_to_codec_tb at ./rom_to_codec_tb.sv line 51
+add wave -position end  sim:/rom_to_codec_tb/counter
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/abirl/ee_371/ee371/ee371/lab3/rom_to_codec_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:22:18 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 20:22:19 on Nov 01,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:22:19 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 20:22:19 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:22:20 on Nov 01,2026, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work rom_to_codec_tb -Lf altera_mf_ver 
+# Start time: 20:22:20 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.rom_to_codec_tb
+# Loading work.rom_to_codec
+# Loading work.rom48000
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./rom_to_codec_tb.sv(51)
+#    Time: 1850 ps  Iteration: 1  Instance: /rom_to_codec_tb
+# Break in Module rom_to_codec_tb at ./rom_to_codec_tb.sv line 51
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:44 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# ** Error: ./rom_to_codec.sv(9): Identifier must be declared with a port mode: counter.
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# End time: 20:40:44 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 16
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./*.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:53 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 20:40:53 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:53 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 20:40:53 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:40:56 on Nov 01,2026, Elapsed time: 0:18:36
+# Errors: 4, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work rom_to_codec_tb -Lf altera_mf_ver 
+# Start time: 20:40:56 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.rom_to_codec_tb
+# Loading work.rom_to_codec
+# Loading work.rom48000
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Error: (vish-4014) No objects found matching '/rom_to_codec_tb/counter'.
+# Executing ONERROR command at macro ./rom_to_codec_wave.do line 8
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./rom_to_codec_tb.sv(50)
+#    Time: 1850 ps  Iteration: 1  Instance: /rom_to_codec_tb
+# Break in Module rom_to_codec_tb at ./rom_to_codec_tb.sv line 50
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:42 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 20:41:42 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:43 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 20:41:43 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:41:44 on Nov 01,2026, Elapsed time: 0:00:48
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work rom_to_codec_tb -Lf altera_mf_ver 
+# Start time: 20:41:44 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.rom_to_codec_tb
+# Loading work.rom_to_codec
+# Loading work.rom48000
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Error: Cannot open macro file: rom_to_codec_wave.do
+# Error in macro ./runlab.do line 31
+# Cannot open macro file: rom_to_codec_wave.do
+#     while executing
+# "do rom_to_codec_wave.do"
+add wave -position end  sim:/rom_to_codec_tb/period
+add wave -position end  sim:/rom_to_codec_tb/clk
+add wave -position end  sim:/rom_to_codec_tb/write
+add wave -position end  sim:/rom_to_codec_tb/rom_data_left
+add wave -position end  sim:/rom_to_codec_tb/rom_data_right
+add wave -position end  sim:/rom_to_codec_tb/dut/counter
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/abirl/ee_371/ee371/ee371/lab3/rom_to_codec_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:43:13 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 20:43:13 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:43:13 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 20:43:13 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:43:14 on Nov 01,2026, Elapsed time: 0:01:30
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work rom_to_codec_tb -Lf altera_mf_ver 
+# Start time: 20:43:14 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.rom_to_codec_tb
+# Loading work.rom_to_codec
+# Loading work.rom48000
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./rom_to_codec_tb.sv(50)
+#    Time: 1850 ps  Iteration: 1  Instance: /rom_to_codec_tb
+# Break in Module rom_to_codec_tb at ./rom_to_codec_tb.sv line 50
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:16 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 23:22:16 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:16 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 23:22:17 on Nov 01,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 23:22:19 on Nov 01,2026, Elapsed time: 2:39:05
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work fir_filter_tb -Lf altera_mf_ver 
+# Start time: 23:22:19 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.fir_filter_tb
+# Loading work.fir_filter
+# Loading work.fifo
+# Loading work.fifo_ctrl
+# Loading work.reg_file
+# ** Error: Cannot open macro file: fir_filter_wave.do
+# Error in macro ./runlab.do line 31
+# Cannot open macro file: fir_filter_wave.do
+#     while executing
+# "do fir_filter_wave.do"
+add wave -position end  sim:/fir_filter_tb/period
+add wave -position end  sim:/fir_filter_tb/clk
+add wave -position end  sim:/fir_filter_tb/reset
+add wave -position end  sim:/fir_filter_tb/enable
+add wave -position end  sim:/fir_filter_tb/data_in
+add wave -position end  sim:/fir_filter_tb/data_out
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/abirl/ee_371/ee371/ee371/lab3/fir_filter_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:42 on Nov 01,2026
+# vlog -reportprogress 300 ./DE1_SoC.sv ./fifo.sv ./fifo_ctrl.sv ./fir_filter.sv ./fir_filter_tb.sv ./reg_file.sv ./rom_to_codec.sv ./rom_to_codec_tb.sv ./task2.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module fifo
+# -- Compiling module fifo_ctrl
+# -- Compiling module fir_filter
+# -- Compiling module fir_filter_tb
+# -- Compiling module reg_file
+# -- Compiling module rom_to_codec
+# -- Compiling module rom_to_codec_tb
+# -- Compiling module task2
+# 
+# Top level modules:
+# 	DE1_SoC
+# 	fir_filter_tb
+# 	rom_to_codec_tb
+# 	task2
+# End time: 23:22:42 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:43 on Nov 01,2026
+# vlog -reportprogress 300 ./Altera_UP_Audio_Bit_Counter.v ./Altera_UP_Audio_In_Deserializer.v ./Altera_UP_Audio_Out_Serializer.v ./Altera_UP_Clock_Edge.v ./Altera_UP_I2C.v ./Altera_UP_I2C_AV_Auto_Initialize.v ./Altera_UP_I2C_DC_Auto_Initialize.v ./Altera_UP_I2C_LCM_Auto_Initialize.v ./Altera_UP_SYNC_FIFO.v ./Altera_UP_Slow_Clock_Generator.v ./DE1_SOC_golden_top.v ./audio_and_video_config.v ./audio_codec.v ./clock_generator.v ./part1.v ./rom48000.v 
+# -- Compiling module Altera_UP_Audio_Bit_Counter
+# -- Compiling module Altera_UP_Audio_In_Deserializer
+# -- Compiling module Altera_UP_Audio_Out_Serializer
+# -- Compiling module Altera_UP_Clock_Edge
+# -- Compiling module Altera_UP_I2C
+# -- Compiling module Altera_UP_I2C_AV_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_DC_Auto_Initialize
+# -- Compiling module Altera_UP_I2C_LCM_Auto_Initialize
+# -- Compiling module Altera_UP_SYNC_FIFO
+# -- Compiling module Altera_UP_Slow_Clock_Generator
+# -- Compiling module DE1_SOC_golden_top
+# -- Compiling module audio_and_video_config
+# -- Compiling module audio_codec
+# -- Compiling module clock_generator
+# -- Compiling module part1
+# -- Compiling module rom48000
+# 
+# Top level modules:
+# 	Altera_UP_I2C_DC_Auto_Initialize
+# 	Altera_UP_I2C_LCM_Auto_Initialize
+# 	DE1_SOC_golden_top
+# 	part1
+# 	rom48000
+# End time: 23:22:43 on Nov 01,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 23:22:44 on Nov 01,2026, Elapsed time: 0:00:25
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work fir_filter_tb -Lf altera_mf_ver 
+# Start time: 23:22:45 on Nov 01,2026
+# Loading sv_std.std
+# Loading work.fir_filter_tb
+# Loading work.fir_filter
+# Loading work.fifo
+# Loading work.fifo_ctrl
+# Loading work.reg_file
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./fir_filter_tb.sv(73)
+#    Time: 3750 ps  Iteration: 1  Instance: /fir_filter_tb
+# Break in Module fir_filter_tb at ./fir_filter_tb.sv line 73
+# End time: 23:40:49 on Nov 01,2026, Elapsed time: 0:18:04
+# Errors: 0, Warnings: 0

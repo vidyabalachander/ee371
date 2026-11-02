@@ -1,0 +1,549 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/abirl/ee_371/ee371/ee371/lab3
+vAltera_UP_Audio_Bit_Counter
+Z1 !s110 1793604163
+!i10b 1
+!s100 J2Tb5SPZN>>^6S@MM9o:c1
+I^zBia]8Bn:aKPz1@Z`]110
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1793134868
+8./Altera_UP_Audio_Bit_Counter.v
+F./Altera_UP_Audio_Bit_Counter.v
+Z4 L0 49
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1793604163.000000
+Z7 !s107 ./rom48000.v|./part1.v|./clock_generator.v|./audio_codec.v|./audio_and_video_config.v|./DE1_SOC_golden_top.v|./Altera_UP_Slow_Clock_Generator.v|./Altera_UP_SYNC_FIFO.v|./Altera_UP_I2C_LCM_Auto_Initialize.v|./Altera_UP_I2C_DC_Auto_Initialize.v|./Altera_UP_I2C_AV_Auto_Initialize.v|./Altera_UP_I2C.v|./Altera_UP_Clock_Edge.v|./Altera_UP_Audio_Out_Serializer.v|./Altera_UP_Audio_In_Deserializer.v|./Altera_UP_Audio_Bit_Counter.v|
+Z8 !s90 -reportprogress|300|./Altera_UP_Audio_Bit_Counter.v|./Altera_UP_Audio_In_Deserializer.v|./Altera_UP_Audio_Out_Serializer.v|./Altera_UP_Clock_Edge.v|./Altera_UP_I2C.v|./Altera_UP_I2C_AV_Auto_Initialize.v|./Altera_UP_I2C_DC_Auto_Initialize.v|./Altera_UP_I2C_LCM_Auto_Initialize.v|./Altera_UP_SYNC_FIFO.v|./Altera_UP_Slow_Clock_Generator.v|./DE1_SOC_golden_top.v|./audio_and_video_config.v|./audio_codec.v|./clock_generator.v|./part1.v|./rom48000.v|
+!i113 1
+Z9 tCvgOpt 0
+n@altera_@u@p_@audio_@bit_@counter
+vAltera_UP_Audio_In_Deserializer
+R1
+!i10b 1
+!s100 MnK8@IQLcda;1gGBW7@Tz0
+IX;a<gP`Kjo8F63@VJja7e0
+R2
+R0
+R3
+8./Altera_UP_Audio_In_Deserializer.v
+F./Altera_UP_Audio_In_Deserializer.v
+Z10 L0 47
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@altera_@u@p_@audio_@in_@deserializer
+vAltera_UP_Audio_Out_Serializer
+R1
+!i10b 1
+!s100 BllhdjOFFm6Rj]o@Xid882
+I?gP]i<4_i3C^c>Z@OZGem3
+R2
+R0
+R3
+8./Altera_UP_Audio_Out_Serializer.v
+F./Altera_UP_Audio_Out_Serializer.v
+R10
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@altera_@u@p_@audio_@out_@serializer
+vAltera_UP_Clock_Edge
+R1
+!i10b 1
+!s100 XaX6^HY04T3X?D32?HdN>2
+IK]TC[PFEEDkIF2;WM`hG]0
+R2
+R0
+R3
+8./Altera_UP_Clock_Edge.v
+F./Altera_UP_Clock_Edge.v
+Z11 L0 48
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@altera_@u@p_@clock_@edge
+vAltera_UP_I2C
+R1
+!i10b 1
+!s100 JU94J3RToJ0DChmlIi^B43
+If@K>J76b1INkPl4WhUcP@3
+R2
+R0
+R3
+8./Altera_UP_I2C.v
+F./Altera_UP_I2C.v
+R11
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@altera_@u@p_@i2@c
+vAltera_UP_I2C_AV_Auto_Initialize
+R1
+!i10b 1
+!s100 TbIA;9787GSRoV9be_N2^2
+IWQ`6jMC>55e8zWW3Z_7IN0
+R2
+R0
+R3
+8./Altera_UP_I2C_AV_Auto_Initialize.v
+F./Altera_UP_I2C_AV_Auto_Initialize.v
+R11
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@altera_@u@p_@i2@c_@a@v_@auto_@initialize
+vAltera_UP_I2C_DC_Auto_Initialize
+R1
+!i10b 1
+!s100 WaG<YW8VGFlT:ijQ;9gO?3
+IXDijFcmUcdJL`=jJSTV=b0
+R2
+R0
+R3
+8./Altera_UP_I2C_DC_Auto_Initialize.v
+F./Altera_UP_I2C_DC_Auto_Initialize.v
+R11
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@altera_@u@p_@i2@c_@d@c_@auto_@initialize
+vAltera_UP_I2C_LCM_Auto_Initialize
+R1
+!i10b 1
+!s100 Jn038;8oQ^Ukg7ZXlQdT33
+ILL<W<EPiGVZK[9[FIJhW;1
+R2
+R0
+R3
+8./Altera_UP_I2C_LCM_Auto_Initialize.v
+F./Altera_UP_I2C_LCM_Auto_Initialize.v
+R11
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@altera_@u@p_@i2@c_@l@c@m_@auto_@initialize
+vAltera_UP_Slow_Clock_Generator
+R1
+!i10b 1
+!s100 U@B3NehPQRXcdeI<e=@I53
+IEaTVOMIfaa>7a;GE4Oe]g3
+R2
+R0
+R3
+8./Altera_UP_Slow_Clock_Generator.v
+F./Altera_UP_Slow_Clock_Generator.v
+L0 53
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@altera_@u@p_@slow_@clock_@generator
+vAltera_UP_SYNC_FIFO
+R1
+!i10b 1
+!s100 jDg=^5VOBFbFho_;gZbiA1
+I<T52aJb?CN2Gooi^e9nhK2
+R2
+R0
+R3
+8./Altera_UP_SYNC_FIFO.v
+F./Altera_UP_SYNC_FIFO.v
+R10
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@altera_@u@p_@s@y@n@c_@f@i@f@o
+vaudio_and_video_config
+R1
+!i10b 1
+!s100 z3>_mDg4hMjn4VjXHn00U3
+IZkeTTkzoffnBELMo:0SmW0
+R2
+R0
+R3
+8./audio_and_video_config.v
+F./audio_and_video_config.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vaudio_codec
+R1
+!i10b 1
+!s100 43h1ad@K@aG98IRVc4i1M1
+Il5jdb3Yg0[LkkDZXocg4G2
+R2
+R0
+R3
+8./audio_codec.v
+F./audio_codec.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vclock_generator
+R1
+!i10b 1
+!s100 39OA<gKn`aijkLgT:8]8i2
+IHQWDYoAc:2;9RO8;SJLV:0
+R2
+R0
+R3
+8./clock_generator.v
+F./clock_generator.v
+R11
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vDE1_SoC
+Z12 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z13 !s110 1793604162
+!i10b 1
+!s100 b^Skd8O6ndChf1nGcnldK2
+IdD?G^h8JVRX1Hi_458S?d2
+R2
+!s105 DE1_SoC_sv_unit
+S1
+R0
+w1793594432
+8./DE1_SoC.sv
+F./DE1_SoC.sv
+L0 9
+R5
+r1
+!s85 0
+31
+Z14 !s108 1793604162.000000
+Z15 !s107 ./task2.sv|./rom_to_codec_tb.sv|./rom_to_codec.sv|./reg_file.sv|./fir_filter_tb.sv|./fir_filter.sv|./fifo_ctrl.sv|./fifo.sv|./DE1_SoC.sv|
+Z16 !s90 -reportprogress|300|./DE1_SoC.sv|./fifo.sv|./fifo_ctrl.sv|./fir_filter.sv|./fir_filter_tb.sv|./reg_file.sv|./rom_to_codec.sv|./rom_to_codec_tb.sv|./task2.sv|
+!i113 1
+R9
+n@d@e1_@so@c
+vDE1_SOC_golden_top
+R1
+!i10b 1
+!s100 bXPJWP]c@>Rf0:T705;V:1
+INEJL1G^L?@Y2PWC4[ccAP0
+R2
+R0
+R3
+8./DE1_SOC_golden_top.v
+F./DE1_SOC_golden_top.v
+L0 54
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@d@e1_@s@o@c_golden_top
+vfifo
+R12
+R13
+!i10b 1
+!s100 S5X^J1DF@AGO9VXR[P_`I3
+Ih;4ESeQCN4Wf?@8[lf7n91
+R2
+!s105 fifo_sv_unit
+S1
+R0
+Z17 w1793488645
+8./fifo.sv
+F./fifo.sv
+L0 9
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9
+vfifo_ctrl
+R12
+R13
+!i10b 1
+!s100 camU<VXf_[j4d@l38k@gl2
+I:HD^<XaKFV=k1XVVeBZ<H0
+R2
+!s105 fifo_ctrl_sv_unit
+S1
+R0
+R17
+8./fifo_ctrl.sv
+F./fifo_ctrl.sv
+L0 6
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9
+vfir_filter
+R12
+R13
+!i10b 1
+!s100 6DV2mkQQC:D2RSQzZdZ:J3
+InnlM;kK09HkcN=cDhl?^b3
+R2
+!s105 fir_filter_sv_unit
+S1
+R0
+R17
+8./fir_filter.sv
+F./fir_filter.sv
+L0 7
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9
+vfir_filter_tb
+R12
+R13
+!i10b 1
+!s100 C[d>=lCcAzQS?7IhQ`=9:0
+IE^L9^Ol<`k?60=7Dk0mQI0
+R2
+!s105 fir_filter_tb_sv_unit
+S1
+R0
+w1793592628
+8./fir_filter_tb.sv
+F./fir_filter_tb.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9
+vpart1
+R1
+!i10b 1
+!s100 bITI]id2cCHN_naH3QhSk3
+IRcMi^OK:RcAbQK>nQJ5z13
+R2
+R0
+R17
+8./part1.v
+F./part1.v
+L0 7
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vreg_file
+R12
+R13
+!i10b 1
+!s100 NFbOf3fbQ1JL;JU:iWB[]3
+IU3hLS]YKfUF33a_oa0R_<3
+R2
+!s105 reg_file_sv_unit
+S1
+R0
+R17
+8./reg_file.sv
+F./reg_file.sv
+L0 5
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9
+vrom48000
+R1
+!i10b 1
+!s100 Mega;]ZXO=RgX;T=G;9f:1
+I]FEhjQNZf<5MIh5<m52Fo0
+R2
+R0
+w1793134869
+8./rom48000.v
+F./rom48000.v
+L0 40
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vrom_to_codec
+R12
+R13
+!i10b 1
+!s100 ]mfz5CNeQ^D3ZQ5W<0XKX1
+IGl?aj]8VBf@@?G>6V@c_;2
+R2
+!s105 rom_to_codec_sv_unit
+S1
+R0
+w1793594450
+8./rom_to_codec.sv
+F./rom_to_codec.sv
+L0 9
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9
+vrom_to_codec_tb
+R12
+R13
+!i10b 1
+!s100 h^zXl7eYV@OT]`EQP<g8U2
+I8JCKEdIz0LIe>ReMR9fQg3
+R2
+!s105 rom_to_codec_tb_sv_unit
+S1
+R0
+w1793594436
+8./rom_to_codec_tb.sv
+F./rom_to_codec_tb.sv
+L0 5
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9
+vtask2
+R12
+R13
+!i10b 1
+!s100 J3:kG@Z[GH?agjSkJ<9Ud3
+IoUg4gEVXcdNFzmX46Zi^12
+R2
+!s105 task2_sv_unit
+S1
+R0
+R17
+8./task2.sv
+F./task2.sv
+L0 7
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9

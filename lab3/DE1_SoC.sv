@@ -48,7 +48,7 @@ module DE1_SoC (CLOCK_50, CLOCK2_50, SW, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_
 	
 	// transfers data from the ROM
 	rom_to_codec transfer (.clk(CLOCK_50), .write, .rom_data_left, .rom_data_right);
-	
+		
 	// instantiating the filters for both left and right channels
 	fir_filter #(.DATA_WIDTH(24), .LOG_2_N(9)) filter_left
 						(.clk(CLOCK_50), .reset, .enable(read), .data_in(unfiltered_left), .data_out(filtered_left));
