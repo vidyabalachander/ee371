@@ -13,22 +13,26 @@ vlib work
 # Compile Verilog
 #  - All Verilog files that are part of this design should have
 #    their own "vlog" line below.
-vlog "./mux2_1.sv"
-vlog "./mux2_1_tb.sv"
-
+vlog "./DE1_SoC.sv"
+vlog "./task1.sv"
+vlog "./bit_counter.sv"
+vlog "./bit_counter_tb.sv"
+vlog "./bit_counter_control.sv"
+vlog "./bit_counter_datapath.sv"
+vlog "./seg7.sv"
 
 # Call vsim to invoke simulator
 #  - Make sure the last item on the line is the correct name of
 #    the testbench module you want to execute.
 #  - If you need the altera_mf_ver library, add "-Lf altera_mf_lib"
 #    (no quotes) to the end of the vsim command
-vsim -voptargs="+acc" -t 1ps -lib work mux2_1_tb
+vsim -voptargs="+acc" -t 1ps -lib work bit_counter_tb
 
 
 # Source the wave do file
 #  - This should be the file that sets up the signal window for
 #    the module you are testing.
-do mux2_1_wave.do
+do bit_counter_wave.do
 
 
 # Set the window types

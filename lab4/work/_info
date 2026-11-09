@@ -1,0 +1,172 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/balac/Projects/EE371/labs/ee371/lab4
+vbit_counter
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1794254427
+!i10b 1
+!s100 ;Tb9gOg0lP>gCE[8SLQef1
+I170aJj7akLXTK]i^Z?UiA1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 bit_counter_sv_unit
+S1
+R0
+w1794099185
+8./bit_counter.sv
+F./bit_counter.sv
+L0 6
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1794254427.000000
+!s107 ./bit_counter.sv|
+!s90 -reportprogress|300|./bit_counter.sv|
+!i113 1
+Z6 tCvgOpt 0
+vbit_counter_control
+R1
+R2
+!i10b 1
+!s100 =XTbIc@X7:3CM:H0Y12g73
+IoB1^M?0ZSSZ9Hbl]K0meO3
+R3
+!s105 bit_counter_control_sv_unit
+S1
+R0
+w1794099038
+8./bit_counter_control.sv
+F./bit_counter_control.sv
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 ./bit_counter_control.sv|
+!s90 -reportprogress|300|./bit_counter_control.sv|
+!i113 1
+R6
+vbit_counter_datapath
+R1
+R2
+!i10b 1
+!s100 7jURz4_HaGcIUAVzVaod?2
+Ig9SoJ:zI11@Zz5<`_Y3Q62
+R3
+!s105 bit_counter_datapath_sv_unit
+S1
+R0
+w1794103218
+8./bit_counter_datapath.sv
+F./bit_counter_datapath.sv
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 ./bit_counter_datapath.sv|
+!s90 -reportprogress|300|./bit_counter_datapath.sv|
+!i113 1
+R6
+vbit_counter_tb
+R1
+R2
+!i10b 1
+!s100 F7Xbc`_g5L5SC<Q[X[L]C0
+I?oiAgPKoFdhG5?b:an<Km3
+R3
+!s105 bit_counter_tb_sv_unit
+S1
+R0
+Z7 w1794254424
+8./bit_counter_tb.sv
+F./bit_counter_tb.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 ./bit_counter_tb.sv|
+!s90 -reportprogress|300|./bit_counter_tb.sv|
+!i113 1
+R6
+vDE1_SoC
+R1
+R2
+!i10b 1
+!s100 ]`:IDd5V9Phnf[S;VecV?0
+ILBJii:mLfW^fhSN;nn81@1
+R3
+!s105 DE1_SoC_sv_unit
+S1
+R0
+w1794252883
+8./DE1_SoC.sv
+F./DE1_SoC.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 ./DE1_SoC.sv|
+!s90 -reportprogress|300|./DE1_SoC.sv|
+!i113 1
+R6
+n@d@e1_@so@c
+vseg7
+R1
+R2
+!i10b 1
+!s100 jj9HOZ_?ONU=EkYa?Y1[J2
+IOHV<;HWWTn3d95DFVdPKk1
+R3
+!s105 seg7_sv_unit
+S1
+R0
+w1791924926
+8./seg7.sv
+F./seg7.sv
+L0 10
+R4
+r1
+!s85 0
+31
+R5
+!s107 ./seg7.sv|
+!s90 -reportprogress|300|./seg7.sv|
+!i113 1
+R6
+vtask1
+R1
+R2
+!i10b 1
+!s100 Zh=WS5j?29YE[2dD082_11
+I`QZeT97^f7l_a4T1=9XN;1
+R3
+!s105 task1_sv_unit
+S1
+R0
+R7
+8./task1.sv
+F./task1.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 ./task1.sv|
+!s90 -reportprogress|300|./task1.sv|
+!i113 1
+R6

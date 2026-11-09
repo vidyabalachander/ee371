@@ -1,0 +1,32 @@
+// The testbench for the bit_counter module.
+module bit_counter_tb ();
+
+	// define module port connections
+	logic [7:0] A;
+	logic clk, s, reset, Done;
+	logic [3:0] result
+	
+	// instantiate module
+   bit_counter dut (.*);
+	
+	// create simulated clock
+	initial begin
+		clk <= 0;
+		forever #(T/2) clk <= ~clk;
+	end  // clock initial
+	
+   integer i;
+	initial begin
+		Reset = 1; Start = 0;  @(posedge clk);
+		Reset = 0;             @(posedge clk);
+		for (i = 0; i < 2**8; i++) begin
+			Start = 1; A = i; @(posedge clk);
+			Start = 0;	        @(posedge Done);
+			$display("T = %4t, bit_counter(%8b) = %1d",
+			         $time, A, result);
+		end
+		@(posedge clk);
+		$stop();
+	end  // initial
+	
+endmodule  // bit_counter_tb
