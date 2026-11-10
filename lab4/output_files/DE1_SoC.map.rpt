@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Mon Nov 09 11:35:10 2026
+Tue Nov 10 13:50:29 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,12 +13,19 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for bst:search|ram32x8:memory|altsyncram:altsyncram_component|altsyncram_3gq1:auto_generated
+ 14. Parameter Settings for User Entity Instance: bst:search|ram32x8:memory|altsyncram:altsyncram_component
+ 15. altsyncram Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "seg7:bst_display_1"
+ 17. Port Connectivity Checks: "bst:search|ram32x8:memory"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +52,16 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Nov 09 11:35:10 2026       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 10 13:50:29 2026       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 21                                          ;
+; Total registers                 ; 28                                          ;
 ; Total pins                      ; 67                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
+; Total block memory bits         ; 256                                         ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -157,30 +164,42 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 22          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------+---------+
-; seg7.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/balac/Projects/EE371/labs/ee371/lab4/seg7.sv                 ;         ;
-; bit_counter_control.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/balac/Projects/EE371/labs/ee371/lab4/bit_counter_control.sv  ;         ;
-; bit_counter.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/balac/Projects/EE371/labs/ee371/lab4/bit_counter.sv          ;         ;
-; bit_counter_datapath.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/balac/Projects/EE371/labs/ee371/lab4/bit_counter_datapath.sv ;         ;
-; DE1_SoC.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv              ;         ;
-; task1.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/balac/Projects/EE371/labs/ee371/lab4/task1.sv                ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
+; bst.sv                           ; yes             ; User SystemVerilog HDL File      ; C:/Users/abirl/ee_371/ee371/ee371/lab4/bst.sv                                ;         ;
+; seg7.sv                          ; yes             ; User SystemVerilog HDL File      ; C:/Users/abirl/ee_371/ee371/ee371/lab4/seg7.sv                               ;         ;
+; DE1_SoC.sv                       ; yes             ; User SystemVerilog HDL File      ; C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv                            ;         ;
+; bst_datapath.sv                  ; yes             ; User SystemVerilog HDL File      ; C:/Users/abirl/ee_371/ee371/ee371/lab4/bst_datapath.sv                       ;         ;
+; bst_control.sv                   ; yes             ; User SystemVerilog HDL File      ; C:/Users/abirl/ee_371/ee371/ee371/lab4/bst_control.sv                        ;         ;
+; my_array.mif                     ; yes             ; User Memory Initialization File  ; C:/Users/abirl/ee_371/ee371/ee371/lab4/my_array.mif                          ;         ;
+; ram32x8.v                        ; yes             ; User Wizard-Generated File       ; C:/Users/abirl/ee_371/ee371/ee371/lab4/ram32x8.v                             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_3gq1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/abirl/ee_371/ee371/ee371/lab4/db/altsyncram_3gq1.tdf                ;         ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -188,51 +207,74 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 16             ;
+; Estimate of Logic utilization (ALMs needed) ; 33             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 27             ;
+; Combinational ALUT usage for logic          ; 54             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 4              ;
+;     -- 6 input functions                    ; 10             ;
 ;     -- 5 input functions                    ; 9              ;
-;     -- 4 input functions                    ; 8              ;
-;     -- <=3 input functions                  ; 6              ;
+;     -- 4 input functions                    ; 16             ;
+;     -- <=3 input functions                  ; 19             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 21             ;
+; Dedicated logic registers                   ; 28             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 67             ;
+; Total MLAB memory bits                      ; 0              ;
+; Total block memory bits                     ; 256            ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 21             ;
-; Total fan-out                               ; 247            ;
-; Average fan-out                             ; 1.36           ;
+; Maximum fan-out                             ; 36             ;
+; Total fan-out                               ; 461            ;
+; Average fan-out                             ; 2.06           ;
 +---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                  ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                          ; Entity Name          ; Library Name ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------+----------------------+--------------+
-; |DE1_SoC                               ; 27 (1)              ; 21 (2)                    ; 0                 ; 0          ; 67   ; 0            ; |DE1_SoC                                                                     ; DE1_SoC              ; work         ;
-;    |task1:count_ones|                  ; 26 (0)              ; 19 (5)                    ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|task1:count_ones                                                    ; task1                ; work         ;
-;       |bit_counter:count_ones|         ; 19 (0)              ; 14 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|task1:count_ones|bit_counter:count_ones                             ; bit_counter          ; work         ;
-;          |bit_counter_control:c_unit|  ; 3 (3)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|task1:count_ones|bit_counter:count_ones|bit_counter_control:c_unit  ; bit_counter_control  ; work         ;
-;          |bit_counter_datapath:d_unit| ; 16 (16)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|task1:count_ones|bit_counter:count_ones|bit_counter_datapath:d_unit ; bit_counter_datapath ; work         ;
-;       |seg7:task1_display|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|task1:count_ones|seg7:task1_display                                 ; seg7                 ; work         ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------+----------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                        ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |DE1_SoC                                     ; 54 (4)              ; 28 (2)                    ; 256               ; 0          ; 67   ; 0            ; |DE1_SoC                                                                                          ; DE1_SoC         ; work         ;
+;    |bst:search|                              ; 43 (0)              ; 26 (0)                    ; 256               ; 0          ; 0    ; 0            ; |DE1_SoC|bst:search                                                                               ; bst             ; work         ;
+;       |bst_control:control|                  ; 7 (7)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|bst:search|bst_control:control                                                           ; bst_control     ; work         ;
+;       |bst_datapath:datapath|                ; 36 (36)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|bst:search|bst_datapath:datapath                                                         ; bst_datapath    ; work         ;
+;       |ram32x8:memory|                       ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |DE1_SoC|bst:search|ram32x8:memory                                                                ; ram32x8         ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |DE1_SoC|bst:search|ram32x8:memory|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;             |altsyncram_3gq1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |DE1_SoC|bst:search|ram32x8:memory|altsyncram:altsyncram_component|altsyncram_3gq1:auto_generated ; altsyncram_3gq1 ; work         ;
+;    |seg7:bst_display_0|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|seg7:bst_display_0                                                                       ; seg7            ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                    ;
-+------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                ; Reason for Removal                     ;
-+------------------------------------------------------------------------------+----------------------------------------+
-; task1:count_ones|bit_counter:count_ones|bit_counter_control:c_unit|ps[2..31] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 30                                       ;                                        ;
-+------------------------------------------------------------------------------+----------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                 ;
++-----------------------------------------------------------------------------------------------------+------------+-------------+--------------+--------------+--------------+--------------+------+--------------+
+; Name                                                                                                ; Type       ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF          ;
++-----------------------------------------------------------------------------------------------------+------------+-------------+--------------+--------------+--------------+--------------+------+--------------+
+; bst:search|ram32x8:memory|altsyncram:altsyncram_component|altsyncram_3gq1:auto_generated|ALTSYNCRAM ; M10K block ; Single Port ; 32           ; 8            ; --           ; --           ; 256  ; my_array.mif ;
++-----------------------------------------------------------------------------------------------------+------------+-------------+--------------+--------------+--------------+--------------+------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                ;
++--------+--------------+---------+--------------+--------------+------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                    ; IP Include File ;
++--------+--------------+---------+--------------+--------------+------------------------------------+-----------------+
+; Altera ; RAM: 1-PORT  ; 17.0    ; N/A          ; N/A          ; |DE1_SoC|bst:search|ram32x8:memory ; ram32x8.v       ;
++--------+--------------+---------+--------------+--------------+------------------------------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++------------------------------------------------+---------------------------------------------------+
+; Register name                                  ; Reason for Removal                                ;
++------------------------------------------------+---------------------------------------------------+
+; bst:search|bst_control:control|ps[2..9,11..31] ; Merged with bst:search|bst_control:control|ps[10] ;
+; bst:search|bst_control:control|ps[10]          ; Stuck at GND due to stuck port data_in            ;
+; Total Number of Removed Registers = 30         ;                                                   ;
++------------------------------------------------+---------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -240,24 +282,135 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 21    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 28    ;
+; Number of registers using Synchronous Clear  ; 11    ;
+; Number of registers using Synchronous Load   ; 15    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Clock Enable       ; 23    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE1_SoC|task1:count_ones|bit_counter:count_ones|bit_counter_datapath:d_unit|data[0]   ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE1_SoC|task1:count_ones|bit_counter:count_ones|bit_counter_datapath:d_unit|result[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE1_SoC|bst:search|bst_datapath:datapath|target[5] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|bst:search|bst_datapath:datapath|high[4]   ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|bst:search|bst_datapath:datapath|Loc[0]    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|bst:search|bst_datapath:datapath|low[4]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Source assignments for bst:search|ram32x8:memory|altsyncram:altsyncram_component|altsyncram_3gq1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                 ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bst:search|ram32x8:memory|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                       ;
++------------------------------------+----------------------+--------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                    ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                             ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                    ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                    ;
+; WIDTH_A                            ; 8                    ; Signed Integer                             ;
+; WIDTHAD_A                          ; 5                    ; Signed Integer                             ;
+; NUMWORDS_A                         ; 32                   ; Signed Integer                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                    ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                    ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                    ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                    ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                    ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                    ;
+; WIDTH_B                            ; 1                    ; Untyped                                    ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                    ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                    ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                    ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                    ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                    ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                    ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                    ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                    ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                    ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                    ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                    ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                    ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                    ;
+; RAM_BLOCK_TYPE                     ; M10K                 ; Untyped                                    ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                    ;
+; INIT_FILE                          ; my_array.mif         ; Untyped                                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                    ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                    ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                    ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                    ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                    ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                    ;
+; CBXI_PARAMETER                     ; altsyncram_3gq1      ; Untyped                                    ;
++------------------------------------+----------------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                      ;
++-------------------------------------------+-----------------------------------------------------------+
+; Name                                      ; Value                                                     ;
++-------------------------------------------+-----------------------------------------------------------+
+; Number of entity instances                ; 1                                                         ;
+; Entity Instance                           ; bst:search|ram32x8:memory|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                               ;
+;     -- WIDTH_A                            ; 8                                                         ;
+;     -- NUMWORDS_A                         ; 32                                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                              ;
+;     -- WIDTH_B                            ; 1                                                         ;
+;     -- NUMWORDS_B                         ; 1                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                              ;
+;     -- RAM_BLOCK_TYPE                     ; M10K                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                 ;
++-------------------------------------------+-----------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "seg7:bst_display_1" ;
++-----------+-------+----------+-----------------+
+; Port      ; Type  ; Severity ; Details         ;
++-----------+-------+----------+-----------------+
+; hex[3..1] ; Input ; Info     ; Stuck at GND    ;
++-----------+-------+----------+-----------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "bst:search|ram32x8:memory" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; data ; Input ; Info     ; Stuck at GND                ;
+; wren ; Input ; Info     ; Stuck at GND                ;
++------+-------+----------+-----------------------------+
 
 
 +-----------------------------------------------------+
@@ -265,22 +418,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 21                          ;
-;     ENA               ; 15                          ;
-;     plain             ; 6                           ;
-; arriav_lcell_comb     ; 30                          ;
-;     normal            ; 30                          ;
+; arriav_ff             ; 28                          ;
+;     ENA SCLR          ; 8                           ;
+;     ENA SLD           ; 15                          ;
+;     SCLR              ; 3                           ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 56                          ;
+;     arith             ; 6                           ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 5                           ;
+;     normal            ; 50                          ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 8                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 16                          ;
 ;         5 data inputs ; 9                           ;
-;         6 data inputs ; 4                           ;
+;         6 data inputs ; 10                          ;
 ; boundary_port         ; 67                          ;
+; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.21                        ;
+; Max LUT depth         ; 4.50                        ;
+; Average LUT depth     ; 2.87                        ;
 +-----------------------+-----------------------------+
 
 
@@ -299,92 +458,121 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Nov 09 11:35:02 2026
+    Info: Processing started: Tue Nov 10 13:50:19 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file bst.sv
+    Info (12023): Found entity 1: bst File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file seg7.sv
-    Info (12023): Found entity 1: seg7 File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/seg7.sv Line: 10
+    Info (12023): Found entity 1: seg7 File: C:/Users/abirl/ee_371/ee371/ee371/lab4/seg7.sv Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file bit_counter_control.sv
-    Info (12023): Found entity 1: bit_counter_control File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/bit_counter_control.sv Line: 5
+    Info (12023): Found entity 1: bit_counter_control File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bit_counter_control.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file bit_counter.sv
-    Info (12023): Found entity 1: bit_counter File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/bit_counter.sv Line: 6
+    Info (12023): Found entity 1: bit_counter File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bit_counter.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file bit_counter_datapath.sv
-    Info (12023): Found entity 1: bit_counter_datapath File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/bit_counter_datapath.sv Line: 5
+    Info (12023): Found entity 1: bit_counter_datapath File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bit_counter_datapath.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file de1_soc.sv
-    Info (12023): Found entity 1: DE1_SoC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 1
+    Info (12023): Found entity 1: DE1_SoC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file task1.sv
-    Info (12023): Found entity 1: task1 File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/task1.sv Line: 1
+    Info (12023): Found entity 1: task1 File: C:/Users/abirl/ee_371/ee371/ee371/lab4/task1.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file bit_counter_tb.sv
-    Info (12023): Found entity 1: bit_counter_tb File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/bit_counter_tb.sv Line: 2
+    Info (12023): Found entity 1: bit_counter_tb File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bit_counter_tb.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file bst_datapath.sv
+    Info (12023): Found entity 1: bst_datapath File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst_datapath.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bst_control.sv
+    Info (12023): Found entity 1: bst_control File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst_control.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ram32x8.v
+    Info (12023): Found entity 1: ram32x8 File: C:/Users/abirl/ee_371/ee371/ee371/lab4/ram32x8.v Line: 40
 Info (12127): Elaborating entity "DE1_SoC" for the top level hierarchy
-Warning (10034): Output port "LEDR[8..0]" at DE1_SoC.sv(6) has no driver File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-Info (12128): Elaborating entity "task1" for hierarchy "task1:count_ones" File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 21
-Info (12128): Elaborating entity "bit_counter" for hierarchy "task1:count_ones|bit_counter:count_ones" File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/task1.sv Line: 11
-Info (12128): Elaborating entity "bit_counter_control" for hierarchy "task1:count_ones|bit_counter:count_ones|bit_counter_control:c_unit" File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/bit_counter.sv Line: 17
-Info (12128): Elaborating entity "bit_counter_datapath" for hierarchy "task1:count_ones|bit_counter:count_ones|bit_counter_datapath:d_unit" File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/bit_counter.sv Line: 18
-Info (12128): Elaborating entity "seg7" for hierarchy "task1:count_ones|seg7:task1_display" File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/task1.sv Line: 27
+Info (12128): Elaborating entity "bst" for hierarchy "bst:search" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 30
+Info (12128): Elaborating entity "bst_control" for hierarchy "bst:search|bst_control:control" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst.sv Line: 19
+Info (12128): Elaborating entity "bst_datapath" for hierarchy "bst:search|bst_datapath:datapath" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst.sv Line: 20
+Warning (10230): Verilog HDL assignment warning at bst_datapath.sv(15): truncated value with size 32 to match size of target (6) File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst_datapath.sv Line: 15
+Warning (10230): Verilog HDL assignment warning at bst_datapath.sv(16): truncated value with size 6 to match size of target (5) File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst_datapath.sv Line: 16
+Warning (10230): Verilog HDL assignment warning at bst_datapath.sv(40): truncated value with size 6 to match size of target (5) File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst_datapath.sv Line: 40
+Warning (10230): Verilog HDL assignment warning at bst_datapath.sv(43): truncated value with size 32 to match size of target (5) File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst_datapath.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at bst_datapath.sv(47): truncated value with size 6 to match size of target (5) File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst_datapath.sv Line: 47
+Info (12128): Elaborating entity "ram32x8" for hierarchy "bst:search|ram32x8:memory" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/bst.sv Line: 22
+Info (12128): Elaborating entity "altsyncram" for hierarchy "bst:search|ram32x8:memory|altsyncram:altsyncram_component" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/ram32x8.v Line: 86
+Info (12130): Elaborated megafunction instantiation "bst:search|ram32x8:memory|altsyncram:altsyncram_component" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/ram32x8.v Line: 86
+Info (12133): Instantiated megafunction "bst:search|ram32x8:memory|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/abirl/ee_371/ee371/ee371/lab4/ram32x8.v Line: 86
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "my_array.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "32"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "M10K"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "5"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3gq1.tdf
+    Info (12023): Found entity 1: altsyncram_3gq1 File: C:/Users/abirl/ee_371/ee371/ee371/lab4/db/altsyncram_3gq1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_3gq1" for hierarchy "bst:search|ram32x8:memory|altsyncram:altsyncram_component|altsyncram_3gq1:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:bst_display_0" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 32
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 6
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 6
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 6
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 6
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 6
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 6
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 6
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 6
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 6
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 7
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 4
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 4
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 5
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab4/DE1_SoC.sv Line: 5
-Info (21057): Implemented 100 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 4
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 5
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/abirl/ee_371/ee371/ee371/lab4/DE1_SoC.sv Line: 5
+Info (21057): Implemented 146 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 33 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
-    Info: Peak virtual memory: 4875 megabytes
-    Info: Processing ended: Mon Nov 09 11:35:10 2026
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:12
+    Info (21061): Implemented 71 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info: Peak virtual memory: 4928 megabytes
+    Info: Processing ended: Tue Nov 10 13:50:29 2026
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
 
 

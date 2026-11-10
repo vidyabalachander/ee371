@@ -1,16 +1,15 @@
-module datapath #(parameter log2n) (clk, reset, A, data_out, initialize,
-    update_low, update_high, save, address, address_out, Found,
+module bst_datapath (clk, reset, A, data_out, initialize,
+    update_low, update_high, save, address, Loc, Found,
     equal, less, at_low, at_high);
-
-    parameter LOG2N = 5;
 
     input logic clk, reset;
     input logic [7:0] A, data_out;
     input logic initialize, update_low, update_high, save;
-    output logic [LOG2N-1:0] address, address_out;
+    output logic [4:0] address, Loc;
     output logic Found, equal, less, at_low, at_high;
 
-    logic [LOG2N-1:0] low, high, mid;
+    logic [4:0] low, high;
+	 logic [5:0] mid;
     logic [7:0] target;
 
     assign mid = (low + high) / 2;
@@ -24,29 +23,31 @@ module datapath #(parameter log2n) (clk, reset, A, data_out, initialize,
 	 
         if (reset) begin
 				low <= 0;
-            high <= (2**LOG2N) - 1;
+            high <= 5'd31;
             target <= 8'd0;
-            address_out <= 0;
+            Loc <= 0;
             Found <= 1'b0;
 				
         end else if (initialize) begin
             low <= 0;
-            high <= (2**LOG2N) - 1;
+            high <= 5'd31;
             target <= A;
-            address_out <= 0;
+            Loc <= 0;
             Found <= 1'b0;
 				
         end else begin
-            if (update_high)
-                high <= mid - 1;
+            if (update_high) begin
+                high <= mid - 1'b1;
 					 
-            else if (update_low)
+            end else if (update_low) begin
                 low <= mid + 1;
-
-            if (save) begin
-                address_out <= mid;
-                Found <= 1'b1;
-            end
-        end
+					 
+				end else begin			
+					if (save) begin
+						 Loc <= mid;
+						 Found <= 1'b1;
+					end
+				end
+			end
     end
 endmodule

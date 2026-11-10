@@ -18,40 +18,27 @@ module DE1_SoC (CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 		s <= meta_s;
 	end
 	
-	task1 count_ones (.clk(CLOCK_50), .reset, .s, .A(SW[7:0]), .HEX0, .LED(LEDR[9]));
+	//logic LED_task1;
+	
+	//task1 count_ones (.clk(CLOCK_50), .reset, .s, .A(SW[7:0]), .HEX0, .LED(LED_task1));
 	
 	//binary search wires
-	logic initialize, update_low, update_high, save;
-	logic equal, less, at_low, at_high;
-
-	logic [LOG2N-1:0] address, address_out;
+	logic [4:0] Loc;
 	logic [7:0] data_out;
 	logic Done, Found;	
 	
-	bst_control control (.*);
-
-	bst_datapath #(.LOG2N(5)) datapath (
-		 .clk,
-		 .reset,
-		 .A(SW[7:0]),
-		 .data_out,
-		 .initialize,
-		 .update_low,
-		 .update_high,
-		 .save,
-		 .address,
-		 .address_out,
-		 .Found,
-		 .equal,
-		 .less,
-		 .at_low,
-		 .at_high
-	);
+	bst search (.clk(CLOCK_50), .reset, .s, .A(SW[7:0]), .Loc, .Done, .Found);
 	
+	seg7 bst_display_0 (.hex(Loc[3:0]), .leds(HEX0));
+	seg7 bst_display_1 (.hex({3'b000, Loc[4]}), .leds(HEX1));
+	
+	assign LEDR[9]   = SW[9]? Done : 1'b0;
+   assign LEDR[0]   = SW[9]? Found : 1'b0;
+	
+	assign LEDR[8:1] = 8'd0;
 	assign HEX5 = 7'b1111111;
 	assign HEX4 = 7'b1111111;
 	assign HEX3 = 7'b1111111;
 	assign HEX2 = 7'b1111111;
-	assign HEX1 = 7'b1111111;
 	
 endmodule // DE1_SoC
