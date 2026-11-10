@@ -20,6 +20,34 @@ module DE1_SoC (CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	
 	task1 count_ones (.clk(CLOCK_50), .reset, .s, .A(SW[7:0]), .HEX0, .LED(LEDR[9]));
 	
+	//binary search wires
+	logic initialize, update_low, update_high, save;
+	logic equal, less, at_low, at_high;
+
+	logic [LOG2N-1:0] address, address_out;
+	logic [7:0] data_out;
+	logic Done, Found;	
+	
+	bst_control control (.*);
+
+	bst_datapath #(.LOG2N(5)) datapath (
+		 .clk,
+		 .reset,
+		 .A(SW[7:0]),
+		 .data_out,
+		 .initialize,
+		 .update_low,
+		 .update_high,
+		 .save,
+		 .address,
+		 .address_out,
+		 .Found,
+		 .equal,
+		 .less,
+		 .at_low,
+		 .at_high
+	);
+	
 	assign HEX5 = 7'b1111111;
 	assign HEX4 = 7'b1111111;
 	assign HEX3 = 7'b1111111;
