@@ -7,10 +7,8 @@ module bit_counter (
 							input logic clk, reset, s,
 							input logic [7:0] A,
 							output logic Done,
-							output logic [3:0] num_ones
+							output logic [3:0] result
 							);
-	
-	logic [3:0] result;
 	
 	// define status and control signals
 	logic clr_result, load_A, right_shift_A, incr_result;
@@ -18,13 +16,5 @@ module bit_counter (
 	
 	bit_counter_control c_unit (.*);
 	bit_counter_datapath d_unit (.*);
-	
-	always_ff @(posedge clk) begin
-		if (reset) num_ones <= 4'b0;
-		else begin
-			if (!Done) num_ones <= num_ones;
-			else if (Done) num_ones <= result;
-		end
-	end
 	
 endmodule // bit_counter

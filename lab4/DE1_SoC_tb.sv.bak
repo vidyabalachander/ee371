@@ -1,0 +1,80 @@
+// The testbench for the top level module, DE1_SoC
+module DE1_SoC_tb ();
+	
+	logic CLOCK_50;
+	logic [9:0] SW;
+	logic [3:0] KEY;
+	logic [9:0] LEDR;
+	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+
+	DE1_SoC dut (.*);
+	
+	// create simulated clock
+	parameter period = 100;
+	initial begin
+		CLOCK_50 <= 0;
+		forever
+			#(period/2)
+			CLOCK_50 <= ~CLOCK_50;
+	end
+	
+	initial begin
+		// test reset
+		KEY[0] <= 0; @(posedge CLOCK_50);
+		KEY[0] <= 1; @(posedge CLOCK_50);
+		
+		
+		// set some A
+		// press start
+		// wait a while
+		// until posedge LEDR[9]
+		// verify hex 0 shows the right value
+		// unpress start
+		SW[6] <= 1; SW[4] <= 1; SW[1] <= 1; @(posedge CLOCK_50);
+		KEY[3] <= 0; @(posedge CLOCK_50);
+		while (!LEDR[9]) @(posedge CLOCK_50);
+		KEY[3] <= 1; @(posedge CLOCK_50);
+		
+		
+		// toggle sw 9 = 1
+		// set some A that we know is in the ram
+		// press start
+		// wait until the done light LEDR[9] is found
+		// verify that found light LEDR[0] is on
+		// hex 1 and 0 should show the right address
+		// unpress start
+		SW[9] <= 1; @(posedge CLOCK_50);
+		SW[3] <= 1; SW[6] <= 0; SW[4] <= 0; SW[1] <= 0; @(posedge CLOCK_50);
+		KEY[3] <= 0; @(posedge CLOCK_50);
+		while (!LEDR[9]) @(posedge CLOCK_50);
+		KEY[3] <= 1; @(posedge CLOCK_50);
+		
+		// keep sw 9 = 1
+		// set some A that we know is not in the ram
+		// press start
+		// wait until the done light LEDR[9] is found
+		// verify that found light LEDR[0] is off
+		// hex 1 and 0 should be of (all 1's)
+		// unpress start
+		SW[0] <= 1; @(posedge CLOCK_50);
+		KEY[3] <= 0; @(posedge CLOCK_50);
+		while (!LEDR[9]) @(posedge CLOCK_50);
+		KEY[3] <= 1; @(posedge CLOCK_50);
+		
+		// turn off sw 9 
+		// set a new A
+		// wait a while
+		// until posedge LEDR[9]
+		// verify hex 0 shows the right value
+		// unpress start
+		SW[9] <= 0; @(posedge CLOCK_50);
+		SW[7] <= 1; SW[6] <= 1; SW[5] <= 1; SW[4] <= 1; 
+		SW[3] <= 1; SW[2] <= 1; SW[1] <= 1; SW[0] <= 1; @(posedge CLOCK_50);
+		KEY[3] <= 0; @(posedge CLOCK_50);
+		while (!LEDR[9]) @(posedge CLOCK_50);
+		KEY[3] <= 1; @(posedge CLOCK_50);
+		
+		$stop;
+	end
+
+endmodule // DE1_SoC_tb

@@ -4,7 +4,7 @@ module bit_counter_tb ();
 	// define module port connections
 	logic [7:0] A;
 	logic clk, s, reset, Done;
-	logic [3:0] num_ones;
+	logic [3:0] result;
 	
 	// instantiate module
    bit_counter dut (.*);

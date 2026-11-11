@@ -103,15 +103,7 @@ HEX5[6] <= <VCC>
 |DE1_SoC|bit_counter:count_ones
 clk => bit_counter_control:c_unit.clk
 clk => bit_counter_datapath:d_unit.clk
-clk => num_ones[0]~reg0.CLK
-clk => num_ones[1]~reg0.CLK
-clk => num_ones[2]~reg0.CLK
-clk => num_ones[3]~reg0.CLK
 reset => bit_counter_control:c_unit.reset
-reset => num_ones.OUTPUTSELECT
-reset => num_ones.OUTPUTSELECT
-reset => num_ones.OUTPUTSELECT
-reset => num_ones.OUTPUTSELECT
 s => bit_counter_control:c_unit.s
 A[0] => bit_counter_datapath:d_unit.A[0]
 A[1] => bit_counter_datapath:d_unit.A[1]
@@ -122,10 +114,10 @@ A[5] => bit_counter_datapath:d_unit.A[5]
 A[6] => bit_counter_datapath:d_unit.A[6]
 A[7] => bit_counter_datapath:d_unit.A[7]
 Done <= bit_counter_control:c_unit.Done
-num_ones[0] <= num_ones[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-num_ones[1] <= num_ones[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-num_ones[2] <= num_ones[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-num_ones[3] <= num_ones[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[0] <= bit_counter_datapath:d_unit.result[0]
+result[1] <= bit_counter_datapath:d_unit.result[1]
+result[2] <= bit_counter_datapath:d_unit.result[2]
+result[3] <= bit_counter_datapath:d_unit.result[3]
 
 
 |DE1_SoC|bit_counter:count_ones|bit_counter_control:c_unit
