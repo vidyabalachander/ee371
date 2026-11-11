@@ -22,21 +22,23 @@ module DE1_SoC_tb ();
 	
 	initial begin
 		// test reset
-		KEY[0] <= 0; @(posedge clk);
-		KEY[0] <= 1; @(posedge clk);
+		SW <= 10'b0; KEY <= 4'b1111;			@(posedge clk);
+		KEY[0] <= 0; 								@(posedge clk);
+		KEY[0] <= 1; 								@(posedge clk);
 		
-		
+		// bit counter (sw 9 = 0)
 		// set some A
 		// press start
 		// wait a while
 		// until posedge LEDR[9]
 		// verify hex 0 shows the right value
 		// unpress start
+		SW[9] <= 0;									@(posedge clk);
 		SW[6] <= 1; SW[4] <= 1; SW[1] <= 1; @(posedge clk);
-		KEY[3] <= 0; @(posedge clk);
-						@(posedge clk)
-		KEY[3] <= 1; @(posedge clk);
-		repeat(20)	@(posedge clk);
+		KEY[3] <= 0; 								@(posedge clk);
+		repeat(12)									@(posedge clk);
+		KEY[3] <= 1; 								@(posedge clk);
+		repeat(4)									@(posedge clk);
 		
 		
 		// toggle sw 9 = 1
@@ -46,11 +48,13 @@ module DE1_SoC_tb ();
 		// verify that found light LEDR[0] is on
 		// hex 1 and 0 should show the right address
 		// unpress start
-		SW[9] <= 1; @(posedge clk);
-		SW[3] <= 1; SW[6] <= 0; SW[4] <= 0; SW[1] <= 0; @(posedge clk);
-		KEY[3] <= 0; @(posedge clk);
-		while (!LEDR[9]) @(posedge clk);
-		KEY[3] <= 1; @(posedge clk);
+		SW[9] <= 1; 								@(posedge clk);
+		SW[3] <= 1; SW[6] <= 0; 
+		SW[4] <= 0; SW[1] <= 0; 				@(posedge clk);
+		KEY[3] <= 0; 								@(posedge clk);
+		repeat(20) 									@(posedge clk);
+		KEY[3] <= 1; 								@(posedge clk);
+		repeat(4)									@(posedge clk);
 		
 		// keep sw 9 = 1
 		// set some A that we know is not in the ram
@@ -59,10 +63,11 @@ module DE1_SoC_tb ();
 		// verify that found light LEDR[0] is off
 		// hex 1 and 0 should be of (all 1's)
 		// unpress start
-		SW[0] <= 1; @(posedge clk);
-		KEY[3] <= 0; @(posedge clk);
-		while (!LEDR[9]) @(posedge clk);
-		KEY[3] <= 1; @(posedge clk);
+		SW[0] <= 1; 								@(posedge clk);
+		KEY[3] <= 0; 								@(posedge clk);
+		repeat(20) 									@(posedge clk);
+		KEY[3] <= 1; 								@(posedge clk);
+		repeat(4)									@(posedge clk);
 		
 		// turn off sw 9 
 		// set a new A
@@ -70,12 +75,15 @@ module DE1_SoC_tb ();
 		// until posedge LEDR[9]
 		// verify hex 0 shows the right value
 		// unpress start
-		SW[9] <= 0; @(posedge clk);
-		SW[7] <= 1; SW[6] <= 1; SW[5] <= 1; SW[4] <= 1; 
-		SW[3] <= 1; SW[2] <= 1; SW[1] <= 1; SW[0] <= 1; @(posedge clk);
-		KEY[3] <= 0; @(posedge clk);
-		while (!LEDR[9]) @(posedge clk);
-		KEY[3] <= 1; @(posedge clk);
+		SW[9] <= 0; 								@(posedge clk);
+		SW[7] <= 1; SW[6] <= 1; 
+		SW[5] <= 1; SW[4] <= 1; 				@(posedge clk);
+		SW[3] <= 1; SW[2] <= 1; 
+		SW[1] <= 1; SW[0] <= 1; 				@(posedge clk);
+		KEY[3] <= 0; 								@(posedge clk);
+		repeat(20)									@(posedge clk);
+		KEY[3] <= 1; 							 	@(posedge clk);
+		repeat(4)									@(posedge clk);
 		
 		$stop;
 	end

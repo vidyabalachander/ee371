@@ -1,7 +1,7 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /DE1_SoC_tb/period
-add wave -noupdate /DE1_SoC_tb/CLOCK_50
+add wave -noupdate /DE1_SoC_tb/clk
 add wave -noupdate /DE1_SoC_tb/SW
 add wave -noupdate /DE1_SoC_tb/KEY
 add wave -noupdate /DE1_SoC_tb/LEDR

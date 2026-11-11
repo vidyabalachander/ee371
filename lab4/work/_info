@@ -10,7 +10,7 @@ cModel Technology
 dC:/Users/balac/Projects/EE371/labs/ee371/lab4
 vbit_counter
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1794365150
+Z1 !s110 1794375677
 !i10b 1
 !s100 ;Tb9gOg0lP>gCE[8SLQef1
 I170aJj7akLXTK]i^Z?UiA1
@@ -26,7 +26,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1794365150.000000
+Z5 !s108 1794375677.000000
 Z6 !s107 ./seg7.sv|./bst_tb.sv|./bst_datapath.sv|./bst_control.sv|./bst.sv|./bit_counter_tb.sv|./bit_counter_datapath.sv|./bit_counter_control.sv|./bit_counter.sv|./DE1_SoC_tb.sv|./DE1_SoC.sv|
 Z7 !s90 -reportprogress|300|./DE1_SoC.sv|./DE1_SoC_tb.sv|./bit_counter.sv|./bit_counter_control.sv|./bit_counter_datapath.sv|./bit_counter_tb.sv|./bst.sv|./bst_control.sv|./bst_datapath.sv|./bst_tb.sv|./seg7.sv|
 !i113 1
@@ -241,13 +241,13 @@ vDE1_SoC_tb
 R0
 R1
 !i10b 1
-!s100 _kF5ZbIDILKd:0NC6OSeY0
-IiO1o2oBW_h7H3][Ymz?lX0
+!s100 ZK7IB1mE1ZjSAneT[z:SX1
+IXjaP41EY2eNSf<W=5IOfM3
 R2
 !s105 DE1_SoC_tb_sv_unit
 S1
 R3
-w1794364986
+w1794375673
 8./DE1_SoC_tb.sv
 F./DE1_SoC_tb.sv
 L0 4
