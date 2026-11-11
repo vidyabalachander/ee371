@@ -15,11 +15,9 @@ module task1(clk, reset, s, A, HEX0, LED);
 		if (reset) num_ones <= 4'b0;
 		if (!Done) begin
 			num_ones <= num_ones;
-			LED <= 0;
 		end
 		else if (Done) begin 
 			num_ones <= result;
-			LED <= 1;
 		end
 	end
 	

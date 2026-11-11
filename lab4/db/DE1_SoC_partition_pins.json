@@ -44,6 +44,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[2]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX1[3]",
 					"strict" : false
 				},

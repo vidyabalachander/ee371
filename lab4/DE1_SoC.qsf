@@ -675,7 +675,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE bit_counter_control.sv
 set_global_assignment -name SYSTEMVERILOG_FILE bit_counter.sv
 set_global_assignment -name SYSTEMVERILOG_FILE bit_counter_datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE DE1_SoC.sv
-set_global_assignment -name SYSTEMVERILOG_FILE task1.sv
 set_global_assignment -name SYSTEMVERILOG_FILE bit_counter_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE bst_datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE bst_control.sv
