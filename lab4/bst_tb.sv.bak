@@ -1,0 +1,12 @@
+// Testbench for the binary search algorithm. Tests various numbers within the RAM array
+// as well as numbers outside the array. Also tests basic functionality.
+
+module bst_tb();
+
+	logic clk, reset, s, Done, Found;
+	logic [4:0] Loc;
+	logic [7:0] A;
+	
+	bst dut(.*0);
+
+endmodule //testbench for the bst module
