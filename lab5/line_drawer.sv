@@ -32,11 +32,6 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
    logic [10:0] 			axis1_distance, axis2_distance;
    logic [10:0] 			axis1_pos, axis2_pos;
 	
-	ax = is_steep ? y0 : x0;
-	ay = is_steep ? x0 : y0;
-	bx = is_steep ? y1 : x1;
-	by = is_steep ? x1 : y1;
-	
 	always_comb begin
 		dx	= (x1 >= x0) ? (x1 - x0) : (x0 - x1);
 		dy	= (y1 >= y0) ? (y1 - y0) : (y0 - y1);
