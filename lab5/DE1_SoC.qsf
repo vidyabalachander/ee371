@@ -673,3 +673,6 @@ set_global_assignment -name STATE_MACHINE_PROCESSING "USER-ENCODED"
 set_global_assignment -name SYSTEMVERILOG_FILE DE1_SoC.sv
 set_global_assignment -name SYSTEMVERILOG_FILE line_drawer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE VGA_framebuffer.sv
+set_global_assignment -name MIF_FILE lineart_values.mif
+set_global_assignment -name QIP_FILE rom_lineart.qip
+set_global_assignment -name SYSTEMVERILOG_FILE read_values.sv
