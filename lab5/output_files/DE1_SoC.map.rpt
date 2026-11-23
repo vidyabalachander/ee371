@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Sun Nov 22 13:38:52 2026
+Sun Nov 22 16:29:22 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -14,18 +14,21 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. Registers Removed During Synthesis
+  9. State Machine - |DE1_SoC|ps
  10. General Register Statistics
  11. Registers Packed Into Inferred Megafunctions
- 12. Source assignments for VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_gop1:auto_generated
- 13. Parameter Settings for User Entity Instance: VGA_framebuffer:fb
- 14. Parameter Settings for Inferred Entity Instance: VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0
- 15. altsyncram Parameter Settings by Entity Instance
- 16. Port Connectivity Checks: "line_drawer:lines"
- 17. Port Connectivity Checks: "VGA_framebuffer:fb"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component|altsyncram_l1h1:auto_generated
+ 14. Source assignments for VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_acq1:auto_generated
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |DE1_SoC
+ 16. Parameter Settings for User Entity Instance: VGA_framebuffer:fb
+ 17. Parameter Settings for User Entity Instance: read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component
+ 18. Parameter Settings for Inferred Entity Instance: VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "VGA_framebuffer:fb"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -52,16 +55,16 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Nov 22 13:38:52 2026       ;
+; Analysis & Synthesis Status     ; Successful - Sun Nov 22 16:29:22 2026       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 58                                          ;
+; Total registers                 ; 96                                          ;
 ; Total pins                      ; 96                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 307,200                                     ;
+; Total block memory bits         ; 312,444                                     ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -164,39 +167,43 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 22          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
-; Maximum used               ; 16          ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.1%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; DE1_SoC.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv                            ;         ;
-; line_drawer.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/abirl/ee_371/ee371/ee371/lab5/line_drawer.sv                        ;         ;
-; VGA_framebuffer.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/abirl/ee_371/ee371/ee371/lab5/VGA_framebuffer.sv                    ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal170.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_gop1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/abirl/ee_371/ee371/ee371/lab5/db/altsyncram_gop1.tdf                ;         ;
-; db/decode_3na.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/abirl/ee_371/ee371/ee371/lab5/db/decode_3na.tdf                     ;         ;
-; db/mux_chb.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/abirl/ee_371/ee371/ee371/lab5/db/mux_chb.tdf                        ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; rom_lineart.v                    ; yes             ; User Wizard-Generated File             ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/rom_lineart.v                  ;         ;
+; DE1_SoC.sv                       ; yes             ; User SystemVerilog HDL File            ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv                     ;         ;
+; line_drawer.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/line_drawer.sv                 ;         ;
+; VGA_framebuffer.sv               ; yes             ; User SystemVerilog HDL File            ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/VGA_framebuffer.sv             ;         ;
+; read_rom.sv                      ; yes             ; User SystemVerilog HDL File            ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/read_rom.sv                    ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_l1h1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/db/altsyncram_l1h1.tdf         ;         ;
+; lineart_values.mif               ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/lineart_values.mif             ;         ;
+; db/altsyncram_acq1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/db/altsyncram_acq1.tdf         ;         ;
+; db/decode_3na.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/db/decode_3na.tdf              ;         ;
+; db/mux_chb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/balac/Projects/EE371/labs/ee371/lab5/db/mux_chb.tdf                 ;         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -204,64 +211,72 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 107            ;
+; Estimate of Logic utilization (ALMs needed) ; 298            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 159            ;
+; Combinational ALUT usage for logic          ; 476            ;
 ;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 53             ;
-;     -- 5 input functions                    ; 5              ;
-;     -- 4 input functions                    ; 4              ;
-;     -- <=3 input functions                  ; 96             ;
+;     -- 6 input functions                    ; 119            ;
+;     -- 5 input functions                    ; 88             ;
+;     -- 4 input functions                    ; 64             ;
+;     -- <=3 input functions                  ; 204            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 58             ;
+; Dedicated logic registers                   ; 96             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 96             ;
 ; Total MLAB memory bits                      ; 0              ;
-; Total block memory bits                     ; 307200         ;
+; Total block memory bits                     ; 312444         ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 96             ;
-; Total fan-out                               ; 2005           ;
-; Average fan-out                             ; 4.49           ;
+; Maximum fan-out                             ; 172            ;
+; Total fan-out                               ; 3968           ;
+; Average fan-out                             ; 4.72           ;
 +---------------------------------------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |DE1_SoC                                  ; 159 (0)             ; 58 (0)                    ; 307200            ; 0          ; 96   ; 0            ; |DE1_SoC                                                                                                   ; DE1_SoC         ; work         ;
-;    |VGA_framebuffer:fb|                   ; 116 (65)            ; 28 (22)                   ; 307200            ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb                                                                                ; VGA_framebuffer ; work         ;
-;       |altsyncram:framebuffer_rtl_0|      ; 51 (0)              ; 6 (0)                     ; 307200            ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0                                                   ; altsyncram      ; work         ;
-;          |altsyncram_gop1:auto_generated| ; 51 (0)              ; 6 (6)                     ; 307200            ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_gop1:auto_generated                    ; altsyncram_gop1 ; work         ;
-;             |decode_3na:decode2|          ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_gop1:auto_generated|decode_3na:decode2 ; decode_3na      ; work         ;
-;             |mux_chb:mux3|                ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_gop1:auto_generated|mux_chb:mux3       ; mux_chb         ; work         ;
-;    |line_drawer:lines|                    ; 43 (43)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|line_drawer:lines                                                                                 ; line_drawer     ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                     ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |DE1_SoC                                     ; 476 (73)            ; 96 (33)                   ; 312444            ; 0          ; 96   ; 0            ; |DE1_SoC                                                                                                       ; DE1_SoC         ; work         ;
+;    |VGA_framebuffer:fb|                      ; 124 (65)            ; 28 (22)                   ; 307200            ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb                                                                                    ; VGA_framebuffer ; work         ;
+;       |altsyncram:framebuffer_rtl_0|         ; 59 (0)              ; 6 (0)                     ; 307200            ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0                                                       ; altsyncram      ; work         ;
+;          |altsyncram_acq1:auto_generated|    ; 59 (0)              ; 6 (6)                     ; 307200            ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_acq1:auto_generated                        ; altsyncram_acq1 ; work         ;
+;             |decode_3na:decode2|             ; 46 (46)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_acq1:auto_generated|decode_3na:decode2     ; decode_3na      ; work         ;
+;             |mux_chb:mux3|                   ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_acq1:auto_generated|mux_chb:mux3           ; mux_chb         ; work         ;
+;    |line_drawer:draw_lines|                  ; 279 (279)           ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|line_drawer:draw_lines                                                                                ; line_drawer     ; work         ;
+;    |read_rom:load_lines|                     ; 0 (0)               ; 0 (0)                     ; 5244              ; 0          ; 0    ; 0            ; |DE1_SoC|read_rom:load_lines                                                                                   ; read_rom        ; work         ;
+;       |rom_lineart:memory|                   ; 0 (0)               ; 0 (0)                     ; 5244              ; 0          ; 0    ; 0            ; |DE1_SoC|read_rom:load_lines|rom_lineart:memory                                                                ; rom_lineart     ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 5244              ; 0          ; 0    ; 0            ; |DE1_SoC|read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;             |altsyncram_l1h1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 5244              ; 0          ; 0    ; 0            ; |DE1_SoC|read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component|altsyncram_l1h1:auto_generated ; altsyncram_l1h1 ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                ;
-+-------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; Name                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
-+-------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_gop1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 307200       ; 1            ; 307200       ; 1            ; 307200 ; None ;
-+-------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                     ;
++------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------+
+; Name                                                                                                             ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                ;
++------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------+
+; VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_acq1:auto_generated|ALTSYNCRAM                        ; AUTO ; Simple Dual Port ; 307200       ; 1            ; 307200       ; 1            ; 307200 ; None               ;
+; read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component|altsyncram_l1h1:auto_generated|ALTSYNCRAM ; AUTO ; ROM              ; 138          ; 38           ; --           ; --           ; 5244   ; lineart_values.mif ;
++------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; line_drawer:lines|error[0,2,3]        ; Merged with line_drawer:lines|error[1] ;
-; line_drawer:lines|error[1]            ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 4 ;                                        ;
-+---------------------------------------+----------------------------------------+
+Encoding Type:  User-Encoded
++---------------------------------+
+; State Machine - |DE1_SoC|ps     ;
++------------+------+------+------+
+; Name       ; ps~4 ; ps~3 ; ps~2 ;
++------------+------+------+------+
+; ps.S_CLEAR ; 0    ; 0    ; 0    ;
+; ps.S_DRAW  ; 0    ; 0    ; 1    ;
+; ps.S_DONE  ; 0    ; 1    ; 1    ;
+; ps.S_HOLD  ; 0    ; 1    ; 0    ;
+; ps.S_LOAD  ; 1    ; 0    ; 1    ;
++------------+------+------+------+
 
 
 +------------------------------------------------------+
@@ -269,12 +284,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 58    ;
-; Number of registers using Synchronous Clear  ; 21    ;
-; Number of registers using Synchronous Load   ; 7     ;
+; Total registers                              ; 96    ;
+; Number of registers using Synchronous Clear  ; 54    ;
+; Number of registers using Synchronous Load   ; 33    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 45    ;
+; Number of registers using Clock Enable       ; 79    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -288,13 +303,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+--------------------------------------+------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE1_SoC|rom_address[7]                        ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |DE1_SoC|y_clear[10]                           ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|line_drawer:draw_lines|axis2_pos[1]   ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |DE1_SoC|x_clear[3]                            ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|line_drawer:draw_lines|axis1_pos[0]   ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|line_drawer:draw_lines|error[4]       ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |DE1_SoC|comb                                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE1_SoC|line_drawer:draw_lines|axis2_start[9] ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |DE1_SoC|line_drawer:draw_lines|axis2_start[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component|altsyncram_l1h1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                             ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                              ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------+
-; Source assignments for VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_gop1:auto_generated ;
+; Source assignments for VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_acq1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                      ;
 +---------------------------------+--------------------+------+-----------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                       ;
 +---------------------------------+--------------------+------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |DE1_SoC ;
++----------------+------------+-------------------------------------------+
+; Parameter Name ; Value      ; Type                                      ;
++----------------+------------+-------------------------------------------+
+; max_line       ; 10001001   ; Unsigned Binary                           ;
+; max_x_pixel    ; 1001111111 ; Unsigned Binary                           ;
+; max_y_pixel    ; 0111011111 ; Unsigned Binary                           ;
++----------------+------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------+
@@ -313,6 +366,67 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VBACK_PORCH    ; 0000100001  ; Unsigned Binary                  ;
 ; VTOTAL         ; 1000001101  ; Unsigned Binary                  ;
 +----------------+-------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                    ;
++------------------------------------+----------------------+---------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                 ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                            ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                          ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                 ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                 ;
+; WIDTH_A                            ; 38                   ; Signed Integer                                          ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                                          ;
+; NUMWORDS_A                         ; 138                  ; Signed Integer                                          ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                 ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                 ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                 ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                 ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                 ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                 ;
+; WIDTH_B                            ; 1                    ; Untyped                                                 ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                 ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                 ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                 ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                 ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                 ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                 ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                 ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                 ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                 ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                 ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                 ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                 ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                 ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                          ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                 ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                 ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                 ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                 ;
+; INIT_FILE                          ; lineart_values.mif   ; Untyped                                                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                 ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                 ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                 ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                 ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                 ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                 ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                 ;
+; CBXI_PARAMETER                     ; altsyncram_l1h1      ; Untyped                                                 ;
++------------------------------------+----------------------+---------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -372,57 +486,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                              ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                              ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                              ;
-; CBXI_PARAMETER                     ; altsyncram_gop1      ; Untyped                              ;
+; CBXI_PARAMETER                     ; altsyncram_acq1      ; Untyped                              ;
 +------------------------------------+----------------------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                            ;
-+-------------------------------------------+-------------------------------------------------+
-; Name                                      ; Value                                           ;
-+-------------------------------------------+-------------------------------------------------+
-; Number of entity instances                ; 1                                               ;
-; Entity Instance                           ; VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                       ;
-;     -- WIDTH_A                            ; 1                                               ;
-;     -- NUMWORDS_A                         ; 307200                                          ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                    ;
-;     -- WIDTH_B                            ; 1                                               ;
-;     -- NUMWORDS_B                         ; 307200                                          ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                          ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                    ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                            ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                        ;
-+-------------------------------------------+-------------------------------------------------+
-
-
-+-----------------------------------------------+
-; Port Connectivity Checks: "line_drawer:lines" ;
-+-----------+-------+----------+----------------+
-; Port      ; Type  ; Severity ; Details        ;
-+-----------+-------+----------+----------------+
-; reset     ; Input ; Info     ; Stuck at GND   ;
-; x0        ; Input ; Info     ; Stuck at GND   ;
-; y0        ; Input ; Info     ; Stuck at GND   ;
-; x1[7..4]  ; Input ; Info     ; Stuck at VCC   ;
-; x1[10..8] ; Input ; Info     ; Stuck at GND   ;
-; x1[3..0]  ; Input ; Info     ; Stuck at GND   ;
-; y1[7..4]  ; Input ; Info     ; Stuck at VCC   ;
-; y1[10..8] ; Input ; Info     ; Stuck at GND   ;
-; y1[3..0]  ; Input ; Info     ; Stuck at GND   ;
-+-----------+-------+----------+----------------+
++--------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                   ;
++-------------------------------------------+------------------------------------------------------------------------+
+; Name                                      ; Value                                                                  ;
++-------------------------------------------+------------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                      ;
+; Entity Instance                           ; read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                    ;
+;     -- WIDTH_A                            ; 38                                                                     ;
+;     -- NUMWORDS_A                         ; 138                                                                    ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                           ;
+;     -- WIDTH_B                            ; 1                                                                      ;
+;     -- NUMWORDS_B                         ; 1                                                                      ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                              ;
+; Entity Instance                           ; VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0                        ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                              ;
+;     -- WIDTH_A                            ; 1                                                                      ;
+;     -- NUMWORDS_A                         ; 307200                                                                 ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                           ;
+;     -- WIDTH_B                            ; 1                                                                      ;
+;     -- NUMWORDS_B                         ; 307200                                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                               ;
++-------------------------------------------+------------------------------------------------------------------------+
 
 
 +------------------------------------------------+
 ; Port Connectivity Checks: "VGA_framebuffer:fb" ;
-+-------------+-------+----------+---------------+
-; Port        ; Type  ; Severity ; Details       ;
-+-------------+-------+----------+---------------+
-; reset       ; Input ; Info     ; Stuck at GND  ;
-; pixel_color ; Input ; Info     ; Stuck at VCC  ;
-; pixel_write ; Input ; Info     ; Stuck at VCC  ;
-+-------------+-------+----------+---------------+
++-------+-------+----------+---------------------+
+; Port  ; Type  ; Severity ; Details             ;
++-------+-------+----------+---------------------+
+; reset ; Input ; Info     ; Stuck at GND        ;
++-------+-------+----------+---------------------+
 
 
 +-----------------------------------------------------+
@@ -430,36 +536,40 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 58                          ;
-;     ENA               ; 28                          ;
-;     ENA SCLR          ; 10                          ;
-;     ENA SLD           ; 7                           ;
-;     SCLR              ; 11                          ;
-;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 162                         ;
-;     arith             ; 78                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 60                          ;
-;         2 data inputs ; 17                          ;
+; arriav_ff             ; 96                          ;
+;     ENA               ; 6                           ;
+;     ENA SCLR          ; 40                          ;
+;     ENA SLD           ; 33                          ;
+;     SCLR              ; 14                          ;
+;     plain             ; 3                           ;
+; arriav_lcell_comb     ; 479                         ;
+;     arith             ; 133                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 68                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 16                          ;
+;         5 data inputs ; 41                          ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 71                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 4                           ;
-;         5 data inputs ; 5                           ;
-;         6 data inputs ; 53                          ;
-;     shared            ; 12                          ;
+;     normal            ; 289                         ;
+;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 9                           ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 53                          ;
+;         4 data inputs ; 48                          ;
+;         5 data inputs ; 47                          ;
+;         6 data inputs ; 119                         ;
+;     shared            ; 56                          ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 47                          ;
 ;         3 data inputs ; 1                           ;
 ; boundary_port         ; 96                          ;
-; stratixv_ram_block    ; 38                          ;
+; stratixv_ram_block    ; 76                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.90                        ;
-; Average LUT depth     ; 2.50                        ;
+; Max LUT depth         ; 16.90                       ;
+; Average LUT depth     ; 9.33                        ;
 +-----------------------+-----------------------------+
 
 
@@ -478,26 +588,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Nov 22 13:38:35 2026
+    Info: Processing started: Sun Nov 22 16:29:14 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file rom_lineart.v
-    Info (12023): Found entity 1: rom_lineart File: C:/Users/abirl/ee_371/ee371/ee371/lab5/rom_lineart.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file read_values.sv
-    Info (12023): Found entity 1: read_rom File: C:/Users/abirl/ee_371/ee371/ee371/lab5/read_values.sv Line: 1
+    Info (12023): Found entity 1: rom_lineart File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/rom_lineart.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file de1_soc_golden_top.v
-    Info (12023): Found entity 1: DE1_SOC_golden_top File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SOC_golden_top.v Line: 54
+    Info (12023): Found entity 1: DE1_SOC_golden_top File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SOC_golden_top.v Line: 54
 Info (12021): Found 1 design units, including 1 entities, in source file de1_soc.sv
-    Info (12023): Found entity 1: DE1_SoC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 21
+    Info (12023): Found entity 1: DE1_SoC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file line_drawer.sv
-    Info (12023): Found entity 1: line_drawer File: C:/Users/abirl/ee_371/ee371/ee371/lab5/line_drawer.sv Line: 18
+    Info (12023): Found entity 1: line_drawer File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/line_drawer.sv Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file vga_framebuffer.sv
-    Info (12023): Found entity 1: VGA_framebuffer File: C:/Users/abirl/ee_371/ee371/ee371/lab5/VGA_framebuffer.sv Line: 32
+    Info (12023): Found entity 1: VGA_framebuffer File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/VGA_framebuffer.sv Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file read_rom.sv
+    Info (12023): Found entity 1: read_rom File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/read_rom.sv Line: 1
 Info (12127): Elaborating entity "DE1_SoC" for the top level hierarchy
-Info (12128): Elaborating entity "VGA_framebuffer" for hierarchy "VGA_framebuffer:fb" File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 62
-Info (12128): Elaborating entity "line_drawer" for hierarchy "line_drawer:lines" File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 66
-Warning (10230): Verilog HDL assignment warning at line_drawer.sv(67): truncated value with size 32 to match size of target (12) File: C:/Users/abirl/ee_371/ee371/ee371/lab5/line_drawer.sv Line: 67
+Info (12128): Elaborating entity "VGA_framebuffer" for hierarchy "VGA_framebuffer:fb" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 108
+Info (12128): Elaborating entity "read_rom" for hierarchy "read_rom:load_lines" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 111
+Info (12128): Elaborating entity "rom_lineart" for hierarchy "read_rom:load_lines|rom_lineart:memory" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/read_rom.sv Line: 8
+Info (12128): Elaborating entity "altsyncram" for hierarchy "read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/rom_lineart.v Line: 82
+Info (12130): Elaborated megafunction instantiation "read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/rom_lineart.v Line: 82
+Info (12133): Instantiated megafunction "read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/rom_lineart.v Line: 82
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "lineart_values.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "138"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "38"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_l1h1.tdf
+    Info (12023): Found entity 1: altsyncram_l1h1 File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/db/altsyncram_l1h1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_l1h1" for hierarchy "read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component|altsyncram_l1h1:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "line_drawer" for hierarchy "line_drawer:draw_lines" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 113
+Warning (10230): Verilog HDL assignment warning at line_drawer.sv(67): truncated value with size 32 to match size of target (12) File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/line_drawer.sv Line: 67
+Warning (284006): Flipped 1 bits in user-encoded state machine |DE1_SoC|ps
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "VGA_framebuffer:fb|framebuffer_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -534,74 +667,73 @@ Info (12133): Instantiated megafunction "VGA_framebuffer:fb|altsyncram:framebuff
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_gop1.tdf
-    Info (12023): Found entity 1: altsyncram_gop1 File: C:/Users/abirl/ee_371/ee371/ee371/lab5/db/altsyncram_gop1.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_acq1.tdf
+    Info (12023): Found entity 1: altsyncram_acq1 File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/db/altsyncram_acq1.tdf Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_3na.tdf
-    Info (12023): Found entity 1: decode_3na File: C:/Users/abirl/ee_371/ee371/ee371/lab5/db/decode_3na.tdf Line: 23
+    Info (12023): Found entity 1: decode_3na File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/db/decode_3na.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
-    Info (12023): Found entity 1: mux_chb File: C:/Users/abirl/ee_371/ee371/ee371/lab5/db/mux_chb.tdf Line: 23
+    Info (12023): Found entity 1: mux_chb File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/db/mux_chb.tdf Line: 23
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 24
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 35
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 35
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 26
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 26
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 26
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 26
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/abirl/ee_371/ee371/ee371/lab5/DE1_SoC.sv Line: 27
-Info (21057): Implemented 293 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 26
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 26
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 26
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 27
+Info (21057): Implemented 648 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 81 output pins
-    Info (21061): Implemented 159 logic cells
-    Info (21064): Implemented 38 RAM segments
+    Info (21061): Implemented 476 logic cells
+    Info (21064): Implemented 76 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
-    Info: Peak virtual memory: 4898 megabytes
-    Info: Processing ended: Sun Nov 22 13:38:52 2026
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4885 megabytes
+    Info: Processing ended: Sun Nov 22 16:29:22 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:13
 
 

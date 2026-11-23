@@ -43,15 +43,61 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 	assign HEX5 = '1;
 	assign LEDR[8:0] = SW[8:0];
 	
-	logic [10:0] x0, y0, x1, y1, x, y;
+	logic [10:0] x0, y0, x1, y1, x, y, x_draw, y_draw, x_clear, y_clear;
+	logic [7:0] rom_address;
+	logic reset, reset_line, line_drawn;
+	assign reset = ~KEY[0];
+	
+	// fsm
+	enum logic [2:0] {S_DRAW, S_CLEAR, S_DONE, S_HOLD, S_LOAD} ps, ns;
+	
+	parameter max_line = 8'd137;
+	parameter max_x_pixel = 10'd639;
+	parameter max_y_pixel = 10'd479;
+	
+	always_ff @(posedge CLOCK_50) begin
+		if (reset) begin
+			ps <= S_CLEAR;
+			x_clear <= 10'b0;
+			y_clear <= 10'b0;
+			rom_address <= 8'b0;
+		end else begin
+			ps <= ns;
+			
+			if (ps == S_DRAW && line_drawn && rom_address < max_line)
+				rom_address <= rom_address + 8'b1;
+			
+			else if (ps == S_CLEAR) begin
+				if (x_clear == max_x_pixel) begin
+						x_clear <= 10'b0;
+						y_clear <= y_clear + 10'b1;
+				end else
+					x_clear <= x_clear + 10'b1;
+			end
+		end
+	end //always_ff
+	
+	assign LEDR[9] = ps == S_DONE;
+	assign reset_line = ps == S_LOAD;
+	
+	always_comb begin
+		ns = ps;
+		case (ps)
+			S_CLEAR: if (x_clear == max_x_pixel && y_clear == max_y_pixel) ns = S_HOLD;
+			S_HOLD: ns = S_LOAD;
+			S_LOAD: ns = S_DRAW;
+			S_DRAW: if (line_drawn) ns = (rom_address == max_line) ? S_DONE : S_HOLD;
+			S_DONE: ns = S_DONE;
+		endcase // ps
+	end // always_comb
 	
 	VGA_framebuffer fb (
 		.clk50			(CLOCK_50), 
-		.reset			(1'b0), 
-		.x, 
-		.y,
-		.pixel_color	(1'b1), 
-		.pixel_write	(1'b1),
+		.reset			(1'b0),
+		.x((ps == S_CLEAR) ? x_clear : x_draw), // if in clear, choose to color all pixels, otherwise choose output from line_drawer
+		.y((ps == S_CLEAR) ? y_clear : y_draw), // if in clear, choose to color all pixels, otherwise choose output from line_drawer
+		.pixel_color	((ps == S_CLEAR) ? 1'b0 : 1'b1), 
+		.pixel_write	(ps != S_DONE), // doesn't draw if we're in the done state
 		.VGA_R, 
 		.VGA_G, 
 		.VGA_B, 
@@ -61,14 +107,9 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 		.VGA_BLANK_n	(VGA_BLANK_N), 
 		.VGA_SYNC_n		(VGA_SYNC_N));
 				
-	logic done;
 
-	line_drawer lines (.clk(CLOCK_50), .reset(1'b0),.x0, .y0, .x1, .y1, .x, .y, .done);
+	read_rom load_lines (.clk(CLOCK_50), .address(rom_address), .x0, .y0, .x1, .y1);
 	
-	assign LEDR[9] = done;
-	assign x0 = 0;
-	assign y0 = 0;
-	assign x1 = 240;
-	assign y1 = 240;
+	line_drawer draw_lines (.clk(CLOCK_50), .reset(reset_line), .x0, .y0, .x1, .y1, .x(x_draw), .y(y_draw), .done(line_drawn));
 
 endmodule  // DE1_SoC

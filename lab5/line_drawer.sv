@@ -65,6 +65,7 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
 			axis1_pos <= axis1_start;
          axis2_pos <= axis2_start;
          error     <= -($signed({1'b0, axis1_distance}) / 2);
+			done <= 1'b0;
       end else if (axis1_pos < axis1_end) begin
 			axis1_pos <= axis1_pos + 11'd1;
 
@@ -78,12 +79,11 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
          end else begin
             error <= error_after_add;
          end
-      end
+      end else 
+			done <= 1'b1;
 	end  // always_ff
 	
 	assign x = is_steep ? axis2_pos : axis1_pos;
    assign y = is_steep ? axis1_pos : axis2_pos;
-
-   assign done = (axis1_pos == axis1_end);
 	
 endmodule  // line_drawer
