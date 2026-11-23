@@ -1,0 +1,215 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/abirl/ee_371/ee371/ee371/lab5
+vDE1_SoC
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1795419959
+!i10b 1
+!s100 Te>m:l_ICcIEkV=no87D63
+ISBL[kjX6>8Mf:^GAE[f672
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 DE1_SoC_sv_unit
+S1
+R0
+w1795416658
+8./DE1_SoC.sv
+F./DE1_SoC.sv
+L0 21
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1795419959.000000
+Z6 !s107 ./rom_reader_tb.sv|./read_rom.sv|./line_drawer_tb.sv|./line_drawer.sv|./VGA_framebuffer.sv|./DE1_SoC_tb.sv|./DE1_SoC.sv|
+Z7 !s90 -reportprogress|300|./DE1_SoC.sv|./DE1_SoC_tb.sv|./VGA_framebuffer.sv|./line_drawer.sv|./line_drawer_tb.sv|./read_rom.sv|./rom_reader_tb.sv|
+!i113 1
+Z8 tCvgOpt 0
+n@d@e1_@so@c
+vDE1_SOC_golden_top
+R2
+!i10b 1
+!s100 bXPJWP]c@>Rf0:T705;V:1
+INEJL1G^L?@Y2PWC4[ccAP0
+R3
+R0
+Z9 w1795126210
+8./DE1_SOC_golden_top.v
+F./DE1_SOC_golden_top.v
+L0 54
+R4
+r1
+!s85 0
+31
+R5
+Z10 !s107 ./rom_lineart.v|./DE1_SOC_golden_top.v|
+Z11 !s90 -reportprogress|300|./DE1_SOC_golden_top.v|./rom_lineart.v|
+!i113 1
+R8
+n@d@e1_@s@o@c_golden_top
+vDE1_SoC_tb
+R1
+R2
+!i10b 1
+!s100 0hMUebdB:=;]0A7hh>^4o3
+IHBTLg^XC4gCU`[R^aZ6Zi2
+R3
+!s105 DE1_SoC_tb_sv_unit
+S1
+R0
+w1795418489
+8./DE1_SoC_tb.sv
+F./DE1_SoC_tb.sv
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@d@e1_@so@c_tb
+vline_drawer
+R1
+R2
+!i10b 1
+!s100 g6oQD:YiaFHT82XM@`AGb2
+ITOhg4YPEXi88ZeLQ:B1bA3
+R3
+!s105 line_drawer_sv_unit
+S1
+R0
+w1795416308
+8./line_drawer.sv
+F./line_drawer.sv
+L0 18
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vline_drawer_tb
+R1
+R2
+!i10b 1
+!s100 5cX=^UL;K^g<kT?[z4X[=2
+IC_Sa8ah0W?MJkSKZC:>j01
+R3
+!s105 line_drawer_tb_sv_unit
+S1
+R0
+w1795417445
+8./line_drawer_tb.sv
+F./line_drawer_tb.sv
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vread_rom
+R1
+R2
+!i10b 1
+!s100 2][<DHdN5QLmFjIaVgUj90
+II`?BI9WhHJH]me8HCzhK00
+R3
+!s105 read_rom_sv_unit
+S1
+R0
+w1795416459
+8./read_rom.sv
+F./read_rom.sv
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vread_rom_tb
+R1
+R2
+!i10b 1
+!s100 _>IMBFB6CGLUD5bk?HchX0
+IGdR^ZHne2L1UTNH19g[4d0
+R3
+!s105 rom_reader_tb_sv_unit
+S1
+R0
+w1795418289
+8./rom_reader_tb.sv
+F./rom_reader_tb.sv
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vrom_lineart
+R2
+!i10b 1
+!s100 jgLoQ8ZFDkmPG1>[69ZW@2
+I0?_2o^:R<HmG_l6CZBToO1
+R3
+R0
+w1795381771
+8./rom_lineart.v
+F./rom_lineart.v
+L0 40
+R4
+r1
+!s85 0
+31
+R5
+R10
+R11
+!i113 1
+R8
+vVGA_framebuffer
+R1
+R2
+!i10b 1
+!s100 CocS=<?=M@3CI^_?A0CO33
+IGN7e1`WVbiFFaY<<9S2XF1
+R3
+!s105 VGA_framebuffer_sv_unit
+S1
+R0
+R9
+8./VGA_framebuffer.sv
+F./VGA_framebuffer.sv
+L0 32
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@v@g@a_framebuffer

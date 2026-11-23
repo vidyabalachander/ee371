@@ -1,0 +1,53 @@
+`timescale 1 ps / 1 ps
+
+module read_rom_tb ();
+	
+   logic clk;
+   logic [7:0] address;
+	logic [10:0] x0, y0, x1, y1;
+
+   read_rom dut (.*);
+	
+	
+	initial begin
+		
+      address <= 0; 															@(posedge clk);
+		repeat(10)																@(posedge clk);
+      if (dut.q == 38'b01000011000110100110100001111011000001)
+         $display("Address 0: SUCCESS");
+      else
+         $display("Address 0: FAIL");
+
+		address <= 19; 														@(posedge clk);
+		repeat(10)																@(posedge clk);
+
+      if (dut.q == 38'b01001010010101101010100110010010110101)
+         $display("Address 19: SUCCESS");
+      else
+         $display("Address 19: FAIL");
+			
+      address <= 55; 														@(posedge clk);
+		repeat(10)																@(posedge clk);
+      if (dut.q == 38'b01011011000101111010101101110010111011)
+         $display("Address 55: SUCCESS");
+      else
+         $display("Address 55: FAIL");
+
+      address <= 114; 														@(posedge clk);
+		repeat(10)																@(posedge clk);
+      if (dut.q == 38'b00110111001011001000110100100101100100)
+         $display("Address 114: SUCCESS");
+      else
+         $display("Address 114: FAIL");
+
+      
+		address <= 137; 														@(posedge clk);
+		repeat(10)																@(posedge clk);
+      if (dut.q == 38'b01000101111010110000100010100101010101)
+         $display("Address 137: SUCCESS");
+      else
+         $display("Address 137: FAIL");
+
+      $stop;
+   end
+endmodule // read_rom_tb

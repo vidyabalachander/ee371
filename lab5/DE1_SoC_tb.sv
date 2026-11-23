@@ -1,0 +1,69 @@
+// Testbench for the top-level module. Tests the whole line-drawing process on the VGA
+// This module implemented our state logic, so the testbench tested many state transitions
+`timescale 1 ps / 1 ps
+
+module DE1_SoC_tb ();
+
+	// define module port connections
+   logic clk;
+   logic [9:0] SW, LEDR;
+   logic [3:0] KEY;
+
+	// instantiating device under test module
+	DE1_SoC dut (.CLOCK_50(clk), .KEY, .SW, .LEDR);
+
+	// create simulated clock
+	parameter period = 100;
+	initial begin
+		clk <= 0;
+		forever
+			#(period/2)
+			clk <= ~clk;
+	end
+
+   initial begin
+      KEY <= '1;
+
+      // hold reset high for two clocks
+      SW <= 10'b1;	@(posedge clk);
+      repeat (2) 		@(posedge clk);
+
+      // release reset
+      SW[0] <= 0;		@(posedge clk);
+
+		// reset_line goes high
+      @(posedge clk);
+
+		// begin drawing line 0
+		@(posedge clk);
+
+		// stay at address 0 while drawing
+		repeat (3) 		@(posedge clk);
+
+		// finish line 0 and advance to address 1
+		wait (dut.rom_address == 8'd1);
+
+		// finish line 137 and turn on LEDR[9]
+		wait (LEDR[9] == 1'b1);
+
+		// hold the finished state
+		repeat (3) 		@(posedge clk);
+
+		// reset after the portrait finishes
+		SW[0] <= 1;		@(posedge clk);
+
+		// release reset and start a second run
+		SW[0] <= 0;
+		wait (dut.rom_address == 8'd1);
+							@(posedge clk);          // S_HOLD -> S_LOAD
+							@(posedge clk);          // S_LOAD -> S_DRAW
+		repeat (3) 		@(posedge clk);
+
+		// 11. S_DRAW -> S_CLEAR: reset during line 1; address returns to 0
+		SW[0] <= 1;		@(posedge clk);
+		repeat (2) 		@(posedge clk);
+
+		$stop;
+	end
+
+endmodule  // DE1_SoC_tb

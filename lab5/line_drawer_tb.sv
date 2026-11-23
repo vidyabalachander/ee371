@@ -1,0 +1,158 @@
+`timescale 1 ps / 1 ps
+// This module is the testbench for the line_drawer module. It draws the 8 different types of lines mentioned in the
+// porject specification and displays a PASS or FAIL depending on whether the line is fully drawn or not.
+module line_drawer_tb ();
+
+	// define module port connections
+   logic clk, reset, done;
+   logic [10:0] x0, y0, x1, y1, x, y;
+
+	// instantiating device under test module
+   line_drawer dut (.*);
+
+	// create simulated clock
+	parameter period = 100;
+	initial begin
+		clk <= 0;
+		forever
+			#(period/2)
+			clk <= ~clk;
+	end
+
+	
+   initial begin
+      x0 <= 20;
+      y0 <= 20;
+
+		//Testing a gradual slope going top-left
+      $display("Top-left gradual");
+      x1 <= 16; y1 <= 18;
+      reset <= 1; @(posedge clk); #1;
+      begin
+         bit pass;
+         pass = (x === 16 && y === 18 && done === 0); //Double equals  (==) was returning a Don't Care somewhere in our waveform
+																		// so we researched and decided to use (===) everywhere
+         reset <= 0;
+         @(posedge clk); #1; pass &= (x === 17 && y === 19 && done === 0);
+         @(posedge clk); #1; pass &= (x === 18 && y === 19 && done === 0);
+         @(posedge clk); #1; pass &= (x === 19 && y === 20 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 20 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 20 && done === 1);
+         if (pass) $write("PASS\n"); else $write("FAIL\n");
+      end
+
+		//Testing a steep slope going top-left
+      $display("Top-left steep");
+      x1 <= 18; y1 <= 16;
+      reset <= 1; @(posedge clk); #1;
+      begin
+         bit pass;
+         pass = (x === 18 && y === 16 && done === 0);
+         reset <= 0;
+         @(posedge clk); #1; pass &= (x === 19 && y === 17 && done === 0);
+         @(posedge clk); #1; pass &= (x === 19 && y === 18 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 19 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 20 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 20 && done === 1);
+         if (pass) $write("PASS\n"); else $write("FAIL\n");
+      end
+
+		//Testing a gradual slope going bottom-right
+      $display("Bottom-right gradual");
+      x1 <= 24; y1 <= 22;
+      reset <= 1; @(posedge clk); #1;
+      begin
+         bit pass;
+         pass = (x === 20 && y === 20 && done === 0);
+         reset <= 0;
+         @(posedge clk); #1; pass &= (x === 21 && y === 21 && done === 0);
+         @(posedge clk); #1; pass &= (x === 22 && y === 21 && done === 0);
+         @(posedge clk); #1; pass &= (x === 23 && y === 22 && done === 0);
+         @(posedge clk); #1; pass &= (x === 24 && y === 22 && done === 0);
+         @(posedge clk); #1; pass &= (x === 24 && y === 22 && done === 1);
+         if (pass) $write("PASS\n"); else $write("FAIL\n");
+      end
+
+		//Testing a steep slope going gottom-right
+      $display("Bottom-right steep");
+      x1 <= 22; y1 <= 24;
+      reset <= 1; @(posedge clk); #1;
+      begin
+         bit pass;
+         pass = (x === 20 && y === 20 && done === 0);
+         reset <= 0;
+         @(posedge clk); #1; pass &= (x === 21 && y === 21 && done === 0);
+         @(posedge clk); #1; pass &= (x === 21 && y === 22 && done === 0);
+         @(posedge clk); #1; pass &= (x === 22 && y === 23 && done === 0);
+         @(posedge clk); #1; pass &= (x === 22 && y === 24 && done === 0);
+         @(posedge clk); #1; pass &= (x === 22 && y === 24 && done === 1);
+         if (pass) $write("PASS\n"); else $write("FAIL\n");
+      end
+
+		//Testing a gradual slope going top-right
+      $display("Top-right gradual");
+      x1 <= 24; y1 <= 18;
+      reset <= 1; @(posedge clk); #1;
+      begin
+         bit pass;
+         pass = (x === 20 && y === 20 && done === 0);
+         reset <= 0;
+         @(posedge clk); #1; pass &= (x === 21 && y === 19 && done === 0);
+         @(posedge clk); #1; pass &= (x === 22 && y === 19 && done === 0);
+         @(posedge clk); #1; pass &= (x === 23 && y === 18 && done === 0);
+         @(posedge clk); #1; pass &= (x === 24 && y === 18 && done === 0);
+         @(posedge clk); #1; pass &= (x === 24 && y === 18 && done === 1);
+         if (pass) $write("PASS\n"); else $write("FAIL\n");
+      end
+
+		//Testing a steep slope going top-right
+      $display("Top-right steep");
+      x1 <= 22; y1 <= 16;
+      reset <= 1; @(posedge clk); #1;
+      begin
+         bit pass;
+         pass = (x === 22 && y === 16 && done === 0);
+         reset <= 0;
+         @(posedge clk); #1; pass &= (x === 21 && y === 17 && done === 0);
+         @(posedge clk); #1; pass &= (x === 21 && y === 18 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 19 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 20 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 20 && done === 1);
+         if (pass) $write("PASS\n"); else $write("FAIL\n");
+      end
+
+		//Testing a gradual slope going bottom-left
+      $display("Bottom-left gradual");
+      x1 <= 16; y1 <= 22;
+      reset <= 1; @(posedge clk); #1;
+      begin
+         bit pass;
+         pass = (x === 16 && y === 22 && done === 0);
+         reset <= 0;
+         @(posedge clk); #1; pass &= (x === 17 && y === 21 && done === 0);
+         @(posedge clk); #1; pass &= (x === 18 && y === 21 && done === 0);
+         @(posedge clk); #1; pass &= (x === 19 && y === 20 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 20 && done === 0);
+         @(posedge clk); #1; pass &= (x === 20 && y === 20 && done === 1);
+         if (pass) $write("PASS\n"); else $write("FAIL\n");
+      end
+
+		//Testing a steep slope going bottom-left
+      $display("Bottom-left steep");
+      x1 <= 18; y1 <= 24;
+      reset <= 1; @(posedge clk); #1;
+      begin
+         bit pass;
+         pass = (x === 20 && y === 20 && done === 0);
+         reset <= 0;
+         @(posedge clk); #1; pass &= (x === 19 && y === 21 && done === 0);
+         @(posedge clk); #1; pass &= (x === 19 && y === 22 && done === 0);
+         @(posedge clk); #1; pass &= (x === 18 && y === 23 && done === 0);
+         @(posedge clk); #1; pass &= (x === 18 && y === 24 && done === 0);
+         @(posedge clk); #1; pass &= (x === 18 && y === 24 && done === 1);
+         if (pass) $write("PASS\n"); else $write("FAIL\n");
+      end
+
+      $stop;
+   end
+endmodule  // line_drawer_tb

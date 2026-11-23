@@ -35,6 +35,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 	output VGA_SYNC_N;
 	output VGA_VS;
 	
+	//Setting the hex displays and LEDs to be off
 	assign HEX0 = '1;
 	assign HEX1 = '1;
 	assign HEX2 = '1;
@@ -51,10 +52,12 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 	// fsm
 	enum logic [2:0] {S_DRAW, S_CLEAR, S_DONE, S_HOLD, S_LOAD} ps, ns;
 	
+	// parameters for the VGA display
 	parameter max_line = 8'd137;
 	parameter max_x_pixel = 10'd639;
 	parameter max_y_pixel = 10'd479;
 	
+	//Reset logic and output logic
 	always_ff @(posedge CLOCK_50) begin
 		if (reset) begin
 			ps <= S_CLEAR;
@@ -78,9 +81,11 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 		end
 	end //always_ff
 	
+	// LED 9 represents the Done state
 	assign LEDR[9] = ps == S_DONE;
 	assign reset_line = ps == S_LOAD;
 	
+	// Next state logic
 	always_comb begin
 		ns = ps;
 		case (ps)
@@ -92,6 +97,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 		endcase // ps
 	end // always_comb
 	
+	//Instantiating the VGA_framebuffer module that colors the pixels
 	VGA_framebuffer fb (
 		.clk50			(CLOCK_50), 
 		.reset			(1'b0),
@@ -109,9 +115,10 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 		.VGA_BLANK_n	(VGA_BLANK_N), 
 		.VGA_SYNC_n		(VGA_SYNC_N));
 				
-
+	//Instantiating the read_rom module
 	read_rom load_lines (.clk(CLOCK_50), .address(rom_address), .x0, .y0, .x1, .y1);
 	
+	//Instantiating the line drawer
 	line_drawer draw_lines (.clk(CLOCK_50), .reset(reset_line), .x0, .y0, .x1, .y1, .x(x_draw), 
 									.y(y_draw), .done(line_drawn));
 

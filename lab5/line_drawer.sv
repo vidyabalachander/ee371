@@ -33,10 +33,14 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
    logic [10:0] 			axis1_pos, axis2_pos;
 	
 	always_comb begin
+		//Setting dx and dy to the absolute value fo the difference between the x and y values
+		//Checking if the slope is steep or gradual
 		dx	= (x1 >= x0) ? (x1 - x0) : (x0 - x1);
 		dy	= (y1 >= y0) ? (y1 - y0) : (y0 - y1);
 		is_steep = (dy > dx);
 		
+		//Creating a 'major' axis and a 'minor' axis
+		//This is axis1 and axis2 respectively depending on whether the slope is gradual or steep
 		axis1_0 = is_steep ? y0 : x0;
       axis2_0 = is_steep ? x0 : y0;
       axis1_1 = is_steep ? y1 : x1;
@@ -45,6 +49,8 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
       axis1_distance = is_steep ? dy : dx;
       axis2_distance = is_steep ? dx : dy;
 		
+		//Depending on whether our starting point is ahed (higher value on major axis)
+		// we either increment or decrement.
 		if (axis1_0 > axis1_1) begin
 			axis1_start = axis1_1;
          axis2_start = axis2_1;
@@ -60,12 +66,18 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
       error_after_add = error + $signed({1'b0, axis2_distance});
 	end
 	
+	//At the positive clock edge we start to increment the major axis and check whether or not
+	//to color in the next increment on the minor axis
 	always_ff @(posedge clk) begin
+	
+		//At reset, we go back to the starting point.
 		if (reset) begin
 			axis1_pos <= axis1_start;
          axis2_pos <= axis2_start;
          error     <= -($signed({1'b0, axis1_distance}) / 2);
 			done <= 1'b0;
+			
+		//Only works if we're not the endpoint
       end else if (axis1_pos < axis1_end) begin
 			axis1_pos <= axis1_pos + 11'd1;
 
