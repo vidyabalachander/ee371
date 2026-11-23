@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Sun Nov 22 16:29:22 2026
+Sun Nov 22 16:35:16 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -55,7 +55,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Nov 22 16:29:22 2026       ;
+; Analysis & Synthesis Status     ; Successful - Sun Nov 22 16:35:16 2026       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
@@ -211,14 +211,14 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 298            ;
+; Estimate of Logic utilization (ALMs needed) ; 296            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 476            ;
+; Combinational ALUT usage for logic          ; 475            ;
 ;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 119            ;
+;     -- 6 input functions                    ; 116            ;
 ;     -- 5 input functions                    ; 88             ;
-;     -- 4 input functions                    ; 64             ;
-;     -- <=3 input functions                  ; 204            ;
+;     -- 4 input functions                    ; 67             ;
+;     -- <=3 input functions                  ; 203            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 96             ;
 ;                                             ;                ;
@@ -230,7 +230,7 @@ agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 172            ;
-; Total fan-out                               ; 3968           ;
+; Total fan-out                               ; 3959           ;
 ; Average fan-out                             ; 4.72           ;
 +---------------------------------------------+----------------+
 
@@ -240,7 +240,7 @@ agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |DE1_SoC                                     ; 476 (73)            ; 96 (33)                   ; 312444            ; 0          ; 96   ; 0            ; |DE1_SoC                                                                                                       ; DE1_SoC         ; work         ;
+; |DE1_SoC                                     ; 475 (72)            ; 96 (33)                   ; 312444            ; 0          ; 96   ; 0            ; |DE1_SoC                                                                                                       ; DE1_SoC         ; work         ;
 ;    |VGA_framebuffer:fb|                      ; 124 (65)            ; 28 (22)                   ; 307200            ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb                                                                                    ; VGA_framebuffer ; work         ;
 ;       |altsyncram:framebuffer_rtl_0|         ; 59 (0)              ; 6 (0)                     ; 307200            ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0                                                       ; altsyncram      ; work         ;
 ;          |altsyncram_acq1:auto_generated|    ; 59 (0)              ; 6 (6)                     ; 307200            ; 0          ; 0    ; 0            ; |DE1_SoC|VGA_framebuffer:fb|altsyncram:framebuffer_rtl_0|altsyncram_acq1:auto_generated                        ; altsyncram_acq1 ; work         ;
@@ -308,12 +308,10 @@ Encoding Type:  User-Encoded
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE1_SoC|rom_address[7]                        ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |DE1_SoC|y_clear[10]                           ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|line_drawer:draw_lines|axis2_pos[1]   ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |DE1_SoC|x_clear[3]                            ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|line_drawer:draw_lines|axis1_pos[0]   ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|line_drawer:draw_lines|error[4]       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE1_SoC|rom_address[2]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|line_drawer:draw_lines|axis2_pos[4]   ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|line_drawer:draw_lines|axis1_pos[8]   ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|line_drawer:draw_lines|error[0]       ;
 ; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |DE1_SoC|comb                                  ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE1_SoC|line_drawer:draw_lines|axis2_start[9] ;
 ; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |DE1_SoC|line_drawer:draw_lines|axis2_start[0] ;
@@ -542,7 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 33                          ;
 ;     SCLR              ; 14                          ;
 ;     plain             ; 3                           ;
-; arriav_lcell_comb     ; 479                         ;
+; arriav_lcell_comb     ; 478                         ;
 ;     arith             ; 133                         ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 68                          ;
@@ -552,14 +550,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 41                          ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 289                         ;
+;     normal            ; 288                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 18                          ;
-;         3 data inputs ; 53                          ;
-;         4 data inputs ; 48                          ;
+;         3 data inputs ; 52                          ;
+;         4 data inputs ; 51                          ;
 ;         5 data inputs ; 47                          ;
-;         6 data inputs ; 119                         ;
+;         6 data inputs ; 116                         ;
 ;     shared            ; 56                          ;
 ;         0 data inputs ; 6                           ;
 ;         1 data inputs ; 2                           ;
@@ -569,7 +567,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 76                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 16.90                       ;
-; Average LUT depth     ; 9.33                        ;
+; Average LUT depth     ; 9.34                        ;
 +-----------------------+-----------------------------+
 
 
@@ -588,7 +586,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Nov 22 16:29:14 2026
+    Info: Processing started: Sun Nov 22 16:35:08 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -605,8 +603,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_fra
 Info (12021): Found 1 design units, including 1 entities, in source file read_rom.sv
     Info (12023): Found entity 1: read_rom File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/read_rom.sv Line: 1
 Info (12127): Elaborating entity "DE1_SoC" for the top level hierarchy
-Info (12128): Elaborating entity "VGA_framebuffer" for hierarchy "VGA_framebuffer:fb" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 108
-Info (12128): Elaborating entity "read_rom" for hierarchy "read_rom:load_lines" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 111
+Info (12128): Elaborating entity "VGA_framebuffer" for hierarchy "VGA_framebuffer:fb" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 109
+Info (12128): Elaborating entity "read_rom" for hierarchy "read_rom:load_lines" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 112
 Info (12128): Elaborating entity "rom_lineart" for hierarchy "read_rom:load_lines|rom_lineart:memory" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/read_rom.sv Line: 8
 Info (12128): Elaborating entity "altsyncram" for hierarchy "read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/rom_lineart.v Line: 82
 Info (12130): Elaborated megafunction instantiation "read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/rom_lineart.v Line: 82
@@ -628,7 +626,7 @@ Info (12133): Instantiated megafunction "read_rom:load_lines|rom_lineart:memory|
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_l1h1.tdf
     Info (12023): Found entity 1: altsyncram_l1h1 File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/db/altsyncram_l1h1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_l1h1" for hierarchy "read_rom:load_lines|rom_lineart:memory|altsyncram:altsyncram_component|altsyncram_l1h1:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "line_drawer" for hierarchy "line_drawer:draw_lines" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 113
+Info (12128): Elaborating entity "line_drawer" for hierarchy "line_drawer:draw_lines" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 114
 Warning (10230): Verilog HDL assignment warning at line_drawer.sv(67): truncated value with size 32 to match size of target (12) File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/line_drawer.sv Line: 67
 Warning (284006): Flipped 1 bits in user-encoded state machine |DE1_SoC|ps
 Info (19000): Inferred 1 megafunctions from design logic
@@ -720,20 +718,21 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 26
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 26
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 26
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 26
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/balac/Projects/EE371/labs/ee371/lab5/DE1_SoC.sv Line: 27
-Info (21057): Implemented 648 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 647 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 81 output pins
-    Info (21061): Implemented 476 logic cells
+    Info (21061): Implemented 475 logic cells
     Info (21064): Implemented 76 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
     Info: Peak virtual memory: 4885 megabytes
-    Info: Processing ended: Sun Nov 22 16:29:22 2026
+    Info: Processing ended: Sun Nov 22 16:35:16 2026
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Total CPU time (on all processors): 00:00:14
 
 
